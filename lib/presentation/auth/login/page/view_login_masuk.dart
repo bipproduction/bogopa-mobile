@@ -1,13 +1,13 @@
-import 'package:bogopa_mobile/core/assets/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/constants/colors.dart';
-import 'view_verifikasi_kode.dart';
+import 'view_data_profile.dart';
 
-class FormPhone extends StatelessWidget {
-  const FormPhone({super.key, required this.data});
+class LoginMasuk extends StatelessWidget {
+  const LoginMasuk({super.key, required this.data});
 
   final String? data;
 
@@ -29,20 +29,22 @@ class FormPhone extends StatelessWidget {
             },
           ),
         ),
-        body: const DataForm(),
+        body: const SingleChildScrollView(
+          child: DataLoginMasuk(),
+        ),
       ),
     );
   }
 }
 
-class DataForm extends StatefulWidget {
-  const DataForm({super.key});
+class DataLoginMasuk extends StatefulWidget {
+  const DataLoginMasuk({super.key});
 
   @override
-  State<DataForm> createState() => _DataFormState();
+  State<DataLoginMasuk> createState() => _DataLoginMasukState();
 }
 
-class _DataFormState extends State<DataForm> {
+class _DataLoginMasukState extends State<DataLoginMasuk> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -81,7 +83,7 @@ class _DataFormState extends State<DataForm> {
                 child: Row(
                   children: [
                     Text(
-                      'Lanjutkan dengan seluler',
+                      'Login kata sandi',
                       softWrap: false,
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
@@ -96,23 +98,27 @@ class _DataFormState extends State<DataForm> {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Nomor phone salah';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(10.0)),
-                      isDense: true,
-                      contentPadding: const EdgeInsets.all(12),
-                      labelStyle: const TextStyle(
-                        fontSize: 15,
-                      ),
-                      labelText: 'Masukkan Nomor Anda'),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Isi kata sandi Anda';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          isDense: true,
+                          contentPadding: const EdgeInsets.all(12),
+                          labelStyle: const TextStyle(
+                            fontSize: 15,
+                          ),
+                          labelText: 'Masukkan password'),
+                    ),
+                  ],
                 ),
               ),
               Padding(
@@ -121,12 +127,10 @@ class _DataFormState extends State<DataForm> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // If the form is valid, display a snackbar. In the real world,
-                        // you'd often call a server or save the information in a database.
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Processing Data')),
                         );
-                        Get.to(const VerifikasiKode(
+                        Get.to(const ViewDataProfile(
                           data: '',
                         ));
                       }
@@ -137,7 +141,7 @@ class _DataFormState extends State<DataForm> {
                         foregroundColor: AppColors.putih,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0))),
-                    child: Text('Lanjutkan'.toUpperCase(),
+                    child: Text('Masuk'.toUpperCase(),
                         style: GoogleFonts.poppins(
                             textStyle: const TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w500))),

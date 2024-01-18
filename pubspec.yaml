@@ -39,6 +39,8 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   flutter_svg: ^2.0.9
   google_fonts: ^6.1.0
+  pinput: ^3.0.1
+  dropdown_button2: ^2.3.9
 
 dev_dependencies:
   build_runner: ^2.4.8

@@ -1,13 +1,13 @@
-import 'package:bogopa_mobile/core/assets/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../../core/assets/assets.gen.dart';
 import '../../../../core/constants/colors.dart';
-import 'view_verifikasi_kode.dart';
+import 'view_login_masuk.dart';
 
-class FormPhone extends StatelessWidget {
-  const FormPhone({super.key, required this.data});
+class KataSandi extends StatelessWidget {
+  const KataSandi({super.key, required this.data});
 
   final String? data;
 
@@ -29,20 +29,22 @@ class FormPhone extends StatelessWidget {
             },
           ),
         ),
-        body: const DataForm(),
+        body: const SingleChildScrollView(
+          child: DatakataSandi(),
+        ),
       ),
     );
   }
 }
 
-class DataForm extends StatefulWidget {
-  const DataForm({super.key});
+class DatakataSandi extends StatefulWidget {
+  const DatakataSandi({super.key});
 
   @override
-  State<DataForm> createState() => _DataFormState();
+  State<DatakataSandi> createState() => _DatakataSandiState();
 }
 
-class _DataFormState extends State<DataForm> {
+class _DatakataSandiState extends State<DatakataSandi> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -81,7 +83,7 @@ class _DataFormState extends State<DataForm> {
                 child: Row(
                   children: [
                     Text(
-                      'Lanjutkan dengan seluler',
+                      'Masukkan kata sandi Anda',
                       softWrap: false,
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
@@ -96,23 +98,48 @@ class _DataFormState extends State<DataForm> {
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 0, vertical: 20),
-                child: TextFormField(
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Nomor phone salah';
-                    }
-                    return null;
-                  },
-                  decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(10.0)),
-                      isDense: true,
-                      contentPadding: const EdgeInsets.all(12),
-                      labelStyle: const TextStyle(
-                        fontSize: 15,
-                      ),
-                      labelText: 'Masukkan Nomor Anda'),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Isi kata sandi Anda';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          isDense: true,
+                          contentPadding: const EdgeInsets.all(12),
+                          labelStyle: const TextStyle(
+                            fontSize: 15,
+                          ),
+                          labelText: 'Masukkan kata sandi'),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 20),
+                    ),
+                    TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Isi kata sandi Anda';
+                        }
+                        return null;
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                              borderSide: const BorderSide(color: Colors.white),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          isDense: true,
+                          contentPadding: const EdgeInsets.all(12),
+                          labelStyle: const TextStyle(
+                            fontSize: 15,
+                          ),
+                          labelText: 'Konfirmasi kata sandi'),
+                    ),
+                  ],
                 ),
               ),
               Padding(
@@ -121,12 +148,10 @@ class _DataFormState extends State<DataForm> {
                   child: ElevatedButton(
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        // If the form is valid, display a snackbar. In the real world,
-                        // you'd often call a server or save the information in a database.
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(content: Text('Processing Data')),
                         );
-                        Get.to(const VerifikasiKode(
+                        Get.to(const LoginMasuk(
                           data: '',
                         ));
                       }

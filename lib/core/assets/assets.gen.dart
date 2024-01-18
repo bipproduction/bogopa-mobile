@@ -43,12 +43,25 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/foto_belakang.png
+  AssetGenImage get fotoBelakang =>
+      const AssetGenImage('assets/images/foto_belakang.png');
+
+  /// File path: assets/images/foto_depan.png
+  AssetGenImage get fotoDepan =>
+      const AssetGenImage('assets/images/foto_depan.png');
+
+  /// File path: assets/images/foto_pemandangan.png
+  AssetGenImage get fotoPemandangan =>
+      const AssetGenImage('assets/images/foto_pemandangan.png');
+
   /// File path: assets/images/logo_foto.png
   AssetGenImage get logoFoto =>
       const AssetGenImage('assets/images/logo_foto.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [logoFoto];
+  List<AssetGenImage> get values =>
+      [fotoBelakang, fotoDepan, fotoPemandangan, logoFoto];
 }
 
 class Assets {
