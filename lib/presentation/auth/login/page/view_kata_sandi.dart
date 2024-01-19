@@ -18,6 +18,7 @@ class KataSandi extends StatelessWidget {
       home: Scaffold(
         backgroundColor: AppColors.putih,
         appBar: AppBar(
+           backgroundColor: AppColors.putih,
           leading: Builder(
             builder: (BuildContext context) {
               return TextButton(
