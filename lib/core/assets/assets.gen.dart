@@ -17,11 +17,17 @@ class $AssetsIconsGen {
   /// File path: assets/icons/back.svg
   SvgGenImage get back => const SvgGenImage('assets/icons/back.svg');
 
+  /// File path: assets/icons/backup.svg
+  SvgGenImage get backup => const SvgGenImage('assets/icons/backup.svg');
+
   /// File path: assets/icons/chat.svg
   SvgGenImage get chat => const SvgGenImage('assets/icons/chat.svg');
 
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
+
+  /// File path: assets/icons/list.svg
+  SvgGenImage get list => const SvgGenImage('assets/icons/list.svg');
 
   /// File path: assets/icons/live.svg
   SvgGenImage get live => const SvgGenImage('assets/icons/live.svg');
@@ -35,13 +41,22 @@ class $AssetsIconsGen {
   /// File path: assets/icons/profile.svg
   SvgGenImage get profile => const SvgGenImage('assets/icons/profile.svg');
 
+  /// File path: assets/icons/setting.svg
+  SvgGenImage get setting => const SvgGenImage('assets/icons/setting.svg');
+
   /// List of all assets
   List<SvgGenImage> get values =>
-      [back, chat, google, live, love, phone, profile];
+      [back, backup, chat, google, list, live, love, phone, profile, setting];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
+
+  /// File path: assets/images/c1.png
+  AssetGenImage get c1 => const AssetGenImage('assets/images/c1.png');
+
+  /// File path: assets/images/c2.png
+  AssetGenImage get c2 => const AssetGenImage('assets/images/c2.png');
 
   /// File path: assets/images/foto_belakang.png
   AssetGenImage get fotoBelakang =>
@@ -55,13 +70,17 @@ class $AssetsImagesGen {
   AssetGenImage get fotoPemandangan =>
       const AssetGenImage('assets/images/foto_pemandangan.png');
 
+  /// File path: assets/images/foto_user.png
+  AssetGenImage get fotoUser =>
+      const AssetGenImage('assets/images/foto_user.png');
+
   /// File path: assets/images/logo_foto.png
   AssetGenImage get logoFoto =>
       const AssetGenImage('assets/images/logo_foto.png');
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [fotoBelakang, fotoDepan, fotoPemandangan, logoFoto];
+      [c1, c2, fotoBelakang, fotoDepan, fotoPemandangan, fotoUser, logoFoto];
 }
 
 class Assets {

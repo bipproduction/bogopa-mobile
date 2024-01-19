@@ -19,6 +19,7 @@ class VerifikasiKode extends StatelessWidget {
       home: Scaffold(
         backgroundColor: AppColors.putih,
         appBar: AppBar(
+          backgroundColor: AppColors.putih,
           leading: Builder(
             builder: (BuildContext context) {
               return TextButton(
@@ -202,8 +203,8 @@ class _FormVerifikasiState extends State<FormVerifikasi> {
                             focusNode.unfocus();
                             formKey.currentState!.validate();
                             Get.to(const KataSandi(
-                          data: '',
-                        ));
+                              data: '',
+                            ));
                           },
                           style: ElevatedButton.styleFrom(
                               minimumSize: const Size.fromHeight(50),
