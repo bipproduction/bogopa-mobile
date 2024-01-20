@@ -1,61 +1,73 @@
 import 'package:flutter/material.dart';
-import 'package:video_player/video_player.dart';
-
+import 'package:flutter/widgets.dart';
+import 'package:webviewx_plus/webviewx_plus.dart';
 
 class MyQPlayer extends StatelessWidget {
+  MyQPlayer({super.key});
+
+  final content = '''
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Page Title</title>
+
+<meta
+ 
+name="viewport"
+ 
+content="width=device-width, initial-scale=1.0">
+
+<style>
+  /* Ensure videos inherit width from parent container */
+  video {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+</style>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+<div style="max-width: 500px;"> <video id="videoElement" controls autoplay playsinline></video>
+</div>
+
+<script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.min.js"></script>
+
+<script>
+
+  
+if (flvjs.isSupported()) {
+    var videoElement = document.getElementById('videoElement');
+    var flvPlayer = flvjs.createPlayer({
+      type: 'flv',
+      url: 'https://stream.wibudev.com/live/bips-MacBook-Air-local.flv'
+    });
+    flvPlayer.attachMediaElement(videoElement);
+    flvPlayer.load();
+  }
+</script>
+</body>
+</html>
+
+''';
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Video Player'),
-        ),
-        body: VideoScreen(),
-      ),
+    return Scaffold(
+      body: SafeArea(
+          child: WebViewX(
+        javascriptMode: JavascriptMode.unrestricted,
+        initialMediaPlaybackPolicy: AutoMediaPlaybackPolicy.alwaysAllow,
+        initialSourceType: SourceType.html,
+        initialContent: content,
+        width: MediaQuery.of(context).size.width, // Expand to full width
+        height: double.infinity,
+      )),
     );
-  }
-}
-
-class VideoScreen extends StatefulWidget {
-  @override
-  _VideoScreenState createState() => _VideoScreenState();
-}
-
-class _VideoScreenState extends State<VideoScreen> {
-  late VideoPlayerController _controller;
-  late Future<void> _initializeVideoPlayerFuture;
-
-  @override
-  void initState() {
-    _controller = VideoPlayerController.networkUrl(
-      Uri.parse('https://stream.wibudev.com/live/bips-MacBook-Air-local.flv'),
-    );
-    _initializeVideoPlayerFuture = _controller.initialize();
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _initializeVideoPlayerFuture,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.done) {
-          return AspectRatio(
-            aspectRatio: _controller.value.aspectRatio,
-            child: VideoPlayer(_controller),
-          );
-        } else {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-      },
-    );
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 }
