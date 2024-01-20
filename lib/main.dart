@@ -1,4 +1,5 @@
 
+import 'package:bogopa_mobile/makuro/stream.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ViewLogin(),
+      home: MyStream(),
     );
   }
 }
