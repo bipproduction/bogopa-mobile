@@ -46,10 +46,6 @@
         sourceSets {
             main.java.srcDirs += 'src/main/kotlin'
         }
-
-        packagingOptions {
-            exclude 'project.clj'
-        }
     
         defaultConfig {
             // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
