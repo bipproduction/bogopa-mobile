@@ -1,10 +1,13 @@
 import 'package:bogopa_mobile/core/constants/colors.dart';
 import 'package:flutter_card_swiper/flutter_card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simple_logger/simple_logger.dart';
 
 import '../../../core/assets/assets.gen.dart';
+import '../widget/modal_list.dart';
+import 'list_dating_page.dart';
 
 final logger = SimpleLogger();
 
@@ -52,25 +55,30 @@ class _DatingPageState extends State<DatingPage> {
       appBar: AppBar(
         backgroundColor: AppColors.putih,
         leading: Builder(builder: (BuildContext context) {
-          return IconButton(
-            icon: const Badge(
-                label: Text(
-                  'VIP',
-                  style: TextStyle(color: AppColors.coklat),
-                ),
-                backgroundColor: Colors.yellow,
-                child: Icon(
-                  Icons.settings_backup_restore,
-                  color: AppColors.coklat,
-                )),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          );
+          return const ModalList();
+          // IconButton(
+          //   icon: const Badge(
+          //       label: Text(
+          //         'VIP',
+          //         style: TextStyle(color: AppColors.coklat),
+          //       ),
+          //       backgroundColor: Colors.yellow,
+          //       child: Icon(
+          //         Icons.settings_backup_restore,
+          //         color: AppColors.coklat,
+          //       )),
+          //   onPressed: () {
+          //     Scaffold.of(context).openDrawer();
+          //   },
+          // );
         }),
         actions: <Widget>[
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.to(const ListDating(
+                data: '',
+              ));
+            },
             child: Assets.icons.list.svg(
                 height: 24,
                 width: 24,
