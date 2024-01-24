@@ -4,6 +4,8 @@ import 'package:bogopa_mobile/presentation/auth/login/page/view_form_phone.dart'
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../dashboard_page/dashboard_page.dart';
 // import 'package:get/get.dart';
 
 class ViewLogin extends StatefulWidget {
@@ -24,6 +26,16 @@ class _ViewLoginState extends State<ViewLogin> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                TextButton(
+                  style: const ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(Colors.blue)
+                  ),
+                  onPressed: () => {
+                  Get.to(const DashboardPage(
+                        key: Key(''),currentTab: 0,
+
+                      ))
+                }, child: const Text("kesana")),
                 Padding(
                   padding: const EdgeInsets.only(top: 60),
                   child: Column(

@@ -26,8 +26,92 @@ class _DatingPageState extends State<DatingPage> {
       child: ClipRRect(
         child: SizedBox.fromSize(
           size: const Size.fromRadius(400),
-          child: Assets.images.c1.image(
-            fit: BoxFit.scaleDown,
+          child: Stack(
+            fit: StackFit.passthrough,
+            children: [
+              Assets.images.c1.image(
+                fit: BoxFit.scaleDown,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  SizedBox(
+                    child: Expanded(
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  bottom: 30, left: 25, right: 25),
+                              child: Container(
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  color: AppColors.pink,
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.only(top: 15, bottom: 15, right: 20, left: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Row(
+                                            children: [
+                                              Text('ECA AURA',
+                                                  softWrap: false,
+                                                  overflow: TextOverflow.fade,
+                                                  style: TextStyle(
+                                                      color: AppColors.coklat,
+                                                      fontSize: 17,
+                                                      fontWeight: FontWeight.bold)),
+                                                      SizedBox(width: 10),
+                                              Text('20',
+                                                  softWrap: false,
+                                                  overflow: TextOverflow.fade,
+                                                  style: TextStyle(
+                                                      color: AppColors.coklat,
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold)),
+                                            ],
+                                          ),
+                                          SizedBox(height: 4),
+                                          Text('Denpasar Barat',
+                                              softWrap: false,
+                                              overflow: TextOverflow.fade,
+                                              style: TextStyle(
+                                                  color: AppColors.coklat,
+                                                  fontSize: 13,
+                                                  fontWeight:
+                                                      FontWeight.normal))
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(0),
+                                        child: Icon(
+                                          Icons.person,
+                                          color: AppColors.pinkMerah,
+                                          size: 50.0,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
           ),
         ),
       ),
@@ -38,12 +122,97 @@ class _DatingPageState extends State<DatingPage> {
       child: ClipRRect(
         child: SizedBox.fromSize(
           size: const Size.fromRadius(400),
-          child: Assets.images.c2.image(
-            fit: BoxFit.scaleDown,
+          child: Stack(
+            fit: StackFit.passthrough,
+            children: [
+              Assets.images.c2.image(
+                fit: BoxFit.scaleDown,
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: <Widget>[
+                  SizedBox(
+                    child: Expanded(
+                      child: Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                  bottom: 30, left: 25, right: 25),
+                              child: Container(
+                                height: 80,
+                                decoration: BoxDecoration(
+                                  color: AppColors.pink,
+                                  borderRadius: BorderRadius.circular(15.0),
+                                ),
+                                child: const Padding(
+                                  padding: EdgeInsets.only(top: 15, bottom: 15, right: 20, left: 20),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: <Widget>[
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: <Widget>[
+                                          Row(
+                                            children: [
+                                              Text('NOT NOT',
+                                                  softWrap: false,
+                                                  overflow: TextOverflow.fade,
+                                                  style: TextStyle(
+                                                      color: AppColors.coklat,
+                                                      fontSize: 17,
+                                                      fontWeight: FontWeight.bold)),
+                                                      SizedBox(width: 10),
+                                              Text('21',
+                                                  softWrap: false,
+                                                  overflow: TextOverflow.fade,
+                                                  style: TextStyle(
+                                                      color: AppColors.coklat,
+                                                      fontSize: 18,
+                                                      fontWeight: FontWeight.bold)),
+                                            ],
+                                          ),
+                                          SizedBox(height: 4),
+                                          Text('Denpasar Timur',
+                                              softWrap: false,
+                                              overflow: TextOverflow.fade,
+                                              style: TextStyle(
+                                                  color: AppColors.coklat,
+                                                  fontSize: 13,
+                                                  fontWeight:
+                                                      FontWeight.normal))
+                                        ],
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(0),
+                                        child: Icon(
+                                          Icons.person,
+                                          color: AppColors.pinkMerah,
+                                          size: 50.0,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                  )
+                ],
+              )
+            ],
           ),
         ),
       ),
     ),
+
   ];
 
   final controller = CardSwiperController();
@@ -56,21 +225,6 @@ class _DatingPageState extends State<DatingPage> {
         backgroundColor: AppColors.putih,
         leading: Builder(builder: (BuildContext context) {
           return const ModalList();
-          // IconButton(
-          //   icon: const Badge(
-          //       label: Text(
-          //         'VIP',
-          //         style: TextStyle(color: AppColors.coklat),
-          //       ),
-          //       backgroundColor: Colors.yellow,
-          //       child: Icon(
-          //         Icons.settings_backup_restore,
-          //         color: AppColors.coklat,
-          //       )),
-          //   onPressed: () {
-          //     Scaffold.of(context).openDrawer();
-          //   },
-          // );
         }),
         actions: <Widget>[
           TextButton(

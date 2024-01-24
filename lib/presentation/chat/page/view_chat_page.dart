@@ -1,6 +1,5 @@
 import 'package:bogopa_mobile/presentation/chat/widget/bubble_live.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../core/constants/colors.dart';
 import '../widget/view_chat_item.dart';
@@ -40,7 +39,7 @@ class ViewChatPage extends StatelessWidget {
                       color: AppColors.coklat,
                     )),
                 onPressed: () {
-                  Get.to(SampleListView());
+                  
                 },
               ),
             )
@@ -97,6 +96,29 @@ class ViewChatPage extends StatelessWidget {
                     itemCount: users.length,
                   ),
                 ),
+                Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 15, bottom: 5),
+                      child: Text(
+                        'Pesan',
+                        softWrap: false,
+                        overflow: TextOverflow.fade,
+                        style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                                fontSize: 16.0,
+                                color: AppColors.coklat,
+                                fontWeight: FontWeight.normal)),
+                      ),
+                    ),
+                  ],
+                ),
+                Scrollbar(
+                  child: SizedBox(
+                    height: 430,
+                    child: SampleListView(),
+                  ),
+                ),
               ],
             ),
           ],
@@ -105,89 +127,3 @@ class ViewChatPage extends StatelessWidget {
     );
   }
 }
-
-// class ChatPage extends StatefulWidget {
-//   const ChatPage({super.key});
-
-//   @override
-//   State<ChatPage> createState() => _ChatPageState();
-// }
-
-// class _ChatPageState extends State<ChatPage> {
-//   final List data = [
-//     {
-//       'photoUrl': 'https://i.pravatar.cc/150?img=1',
-//       'name': 'Saras',
-//       'address': 'Jepara',
-//     },
-//     {
-//       'photoUrl': 'https://i.pravatar.cc/150?img=2',
-//       'name': 'Raden Kumbara',
-//       'address': 'Semarang',
-//     },
-//     {
-//       'photoUrl': 'https://i.pravatar.cc/150?img=3',
-//       'name': 'Wawan',
-//       'address': 'Sleman',
-//     },
-//     {
-//       'photoUrl': 'https://i.pravatar.cc/150?img=4',
-//       'name': 'Mulyadi',
-//       'address': 'Gunung Kidul',
-//     },
-//     {
-//       'photoUrl': 'https://i.pravatar.cc/150?img=5',
-//       'name': 'Wulan',
-//       'address': 'Bantul',
-//     },
-//     {
-//       'photoUrl': 'https://i.pravatar.cc/150?img=6',
-//       'name': 'Suryono',
-//       'address': 'Kulonprogo',
-//     },
-//   ];
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.all(20.0),
-//       child: Column(
-//         children: <Widget>[
-//           Padding(
-//             padding: const EdgeInsets.only(bottom: 10.0),
-//             child: Row(
-//                 crossAxisAlignment: CrossAxisAlignment.start,
-//                 mainAxisAlignment: MainAxisAlignment.start,
-//                 children: [
-//                   Text(
-//                     'Rekomendasi',
-//                     softWrap: false,
-//                     overflow: TextOverflow.fade,
-//                     style: GoogleFonts.poppins(
-//                         textStyle: const TextStyle(
-//                             fontSize: 16.0,
-//                             color: AppColors.coklat,
-//                             fontWeight: FontWeight.bold)),
-//                   ),
-//                 ]),
-//           ),
-//           Column(
-//             children: [
-//               SizedBox(
-//                 height: 90,
-//                 child: ListView.builder(
-//                   scrollDirection: Axis.horizontal,
-//                   padding: const EdgeInsets.all(10),
-//                   itemBuilder: (context, index) {
-//                     return BubbleLive(
-
-//                     )
-//                   },
-//                 ),
-//               ),
-//             ],
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
