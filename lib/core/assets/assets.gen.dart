@@ -23,8 +23,14 @@ class $AssetsIconsGen {
   /// File path: assets/icons/chat.svg
   SvgGenImage get chat => const SvgGenImage('assets/icons/chat.svg');
 
+  /// File path: assets/icons/diamond.svg
+  SvgGenImage get diamond => const SvgGenImage('assets/icons/diamond.svg');
+
   /// File path: assets/icons/google.svg
   SvgGenImage get google => const SvgGenImage('assets/icons/google.svg');
+
+  /// File path: assets/icons/like.svg
+  SvgGenImage get like => const SvgGenImage('assets/icons/like.svg');
 
   /// File path: assets/icons/list.svg
   SvgGenImage get list => const SvgGenImage('assets/icons/list.svg');
@@ -41,12 +47,28 @@ class $AssetsIconsGen {
   /// File path: assets/icons/profile.svg
   SvgGenImage get profile => const SvgGenImage('assets/icons/profile.svg');
 
+  /// File path: assets/icons/search.svg
+  SvgGenImage get search => const SvgGenImage('assets/icons/search.svg');
+
   /// File path: assets/icons/setting.svg
   SvgGenImage get setting => const SvgGenImage('assets/icons/setting.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [back, backup, chat, google, list, live, love, phone, profile, setting];
+  List<SvgGenImage> get values => [
+        back,
+        backup,
+        chat,
+        diamond,
+        google,
+        like,
+        list,
+        live,
+        love,
+        phone,
+        profile,
+        search,
+        setting
+      ];
 }
 
 class $AssetsImagesGen {

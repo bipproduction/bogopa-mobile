@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../../auth/login/page/view_login.dart';
 
-class ListDating extends StatelessWidget {
-  const ListDating({super.key, required this.data});
+class ViewPengaturan extends StatelessWidget {
+  const ViewPengaturan({super.key, required this.data});
 
   final String? data;
 
@@ -30,28 +30,28 @@ class ListDating extends StatelessWidget {
           ),
         ),
         body: const SingleChildScrollView(
-          child: ViewListDating(),
+          child: ViewPengaturanPage(),
         ),
       ),
     );
   }
 }
 
-class ViewListDating extends StatefulWidget {
-  const ViewListDating({
+class ViewPengaturanPage extends StatefulWidget {
+  const ViewPengaturanPage({
     super.key,
   });
 
   @override
-  State<ViewListDating> createState() => _ViewListDatingState();
+  State<ViewPengaturanPage> createState() => _ViewPengaturanPageState();
 }
 
-class _ViewListDatingState extends State<ViewListDating> {
+class _ViewPengaturanPageState extends State<ViewPengaturanPage> {
   bool _checkbox = false;
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 10.0, left: 20.0, right: 20.0),
@@ -200,16 +200,17 @@ class _ViewListDatingState extends State<ViewListDating> {
                                       color: AppColors.pinkMerah,
                                       fontWeight: FontWeight.normal)),
                             ),
-                            const SizedBox(width: 5,),
+                            const SizedBox(
+                              width: 5,
+                            ),
                             Container(
                               width: 20,
                               height: 13,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2),
                                   color: const Color(0xFFAF810B)),
-
                               child: const Center(
-                                child:  Text(
+                                child: Text(
                                   'VIP',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -298,17 +299,21 @@ class _ViewListDatingState extends State<ViewListDating> {
                                       color: AppColors.pinkMerah,
                                       fontWeight: FontWeight.normal)),
                             ),
-                            const SizedBox(width: 5,),
+                            const SizedBox(
+                              width: 5,
+                            ),
                             Container(
                               width: 20,
                               height: 13,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2),
                                   color: const Color(0xFFAF810B)),
-
                               child: const Center(
-                                child:  Icon(Icons.diamond, color: Colors.white, size: 10,)
-                              ),
+                                  child: Icon(
+                                Icons.diamond,
+                                color: Colors.white,
+                                size: 10,
+                              )),
                             )
                           ],
                         ),
@@ -366,20 +371,25 @@ class _ViewListDatingState extends State<ViewListDating> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 100),
+          padding: const EdgeInsets.only(top: 100, left: 15, right: 15),
           child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text(
-                  'Dating Apps V.1.0.0',
-                  softWrap: false,
-                  overflow: TextOverflow.fade,
-                  style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                          fontSize: 11,
-                          color: AppColors.coklat,
-                          fontWeight: FontWeight.normal)),
+                ElevatedButton(
+                  onPressed: () {
+                    Get.to(const ViewLogin());
+                  },
+                  style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(60),
+                      backgroundColor: AppColors.pinkMerah,
+                      foregroundColor: AppColors.putih,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10.0))),
+                  child: Text('LOGOUT'.toUpperCase(),
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w500))),
                 )
               ]),
         )

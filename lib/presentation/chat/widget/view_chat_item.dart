@@ -1,3 +1,4 @@
+import 'package:bogopa_mobile/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class SampleListView extends StatelessWidget {
@@ -8,59 +9,81 @@ class SampleListView extends StatelessWidget {
     {
       'photoUrl': 'https://i.pravatar.cc/150?img=1',
       'name': 'Saras',
-      'address': 'Jepara',
+      'message': 'Assalammulaikum',
     },
     {
       'photoUrl': 'https://i.pravatar.cc/150?img=2',
       'name': 'Raden Kumbara',
-      'address': 'Semarang',
+      'message': 'Selamat Sore',
     },
     {
       'photoUrl': 'https://i.pravatar.cc/150?img=3',
       'name': 'Wawan',
-      'address': 'Sleman',
+      'message': 'Haii',
     },
     {
       'photoUrl': 'https://i.pravatar.cc/150?img=4',
       'name': 'Mulyadi',
-      'address': 'Gunung Kidul',
+      'message': 'Selamat Siang',
     },
     {
       'photoUrl': 'https://i.pravatar.cc/150?img=5',
       'name': 'Wulan',
-      'address': 'Bantul',
+      'message': 'Selamat makan',
     },
     {
       'photoUrl': 'https://i.pravatar.cc/150?img=6',
       'name': 'Suryono',
-      'address': 'Kulonprogo',
+      'message': 'Main bola yuk..',
+    },
+    {
+      'photoUrl': 'https://i.pravatar.cc/150?img=7',
+      'name': 'Suryono',
+      'message': 'Main bola yuk..',
+    },
+    {
+      'photoUrl': 'https://i.pravatar.cc/150?img=8',
+      'name': 'Suryono',
+      'message': 'Main bola yuk..',
+    },
+    {
+      'photoUrl': 'https://i.pravatar.cc/150?img=9',
+      'name': 'Suryono',
+      'message': 'Main bola yuk..',
     },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.putih,
       body: ListView.separated(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(15),
         itemBuilder: (context, index) {
-          return ListTile(
-            leading: Image.network(data[index]['photoUrl']),
-            title: Text(data[index]['name']),
-            subtitle: Text(data[index]['address']),
-            trailing: IconButton(
-              icon: const Icon(Icons.more_vert),
-              onPressed: () {},
+          return Scrollbar(
+            child: SizedBox(
+              child: ListTile(
+                leading: ClipOval(
+                  child: Image.network(data[index]['photoUrl']),
+                ),
+                title: Text(data[index]['name'], style: const TextStyle(fontWeight: FontWeight.bold),),
+                subtitle: Text(data[index]['message'], style: const TextStyle(color: Colors.grey),),
+                // trailing: IconButton(
+                //   icon: const Icon(Icons.more_vert),
+                //   onPressed: () {},
+                // ),
+                tileColor: const Color(0xFFF2DBE2),
+                shape:
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              ),
             ),
-            tileColor: Colors.grey[400],
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           );
         },
         itemCount: data.length,
         separatorBuilder: (context, index) {
           return const Divider(
-            thickness: 2,
-            color: Colors.grey,
+            thickness: 1,
+            color: Colors.white,
           );
         },
       ),
