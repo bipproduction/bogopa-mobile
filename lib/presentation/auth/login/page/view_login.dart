@@ -26,16 +26,6 @@ class _ViewLoginState extends State<ViewLogin> {
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                TextButton(
-                  style: const ButtonStyle(
-                    backgroundColor: MaterialStatePropertyAll(Colors.blue)
-                  ),
-                  onPressed: () => {
-                  Get.to(const DashboardPage(
-                        key: Key(''),currentTab: 0,
-
-                      ))
-                }, child: const Text("kesana")),
                 Padding(
                   padding: const EdgeInsets.only(top: 60),
                   child: Column(
@@ -134,7 +124,17 @@ class _ViewLoginState extends State<ViewLogin> {
                       )
                     ],
                   ),
-                )
+                ),
+                TextButton(
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                    onPressed: () => {
+                          Get.to(const DashboardPage(
+                            key: Key(''),
+                            currentTab: 0,
+                          ))
+                        },
+                    child: const Text("kesana")),
               ]),
         ),
       ),

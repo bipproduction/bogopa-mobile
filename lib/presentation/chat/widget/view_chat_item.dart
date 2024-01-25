@@ -61,29 +61,37 @@ class SampleListView extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         itemBuilder: (context, index) {
           return Scrollbar(
-            child: SizedBox(
-              child: ListTile(
-                leading: ClipOval(
-                  child: Image.network(data[index]['photoUrl']),
+            // ignore: avoid_unnecessary_containers
+            child: Container(
+                child: TextButton(
+              style: const ButtonStyle(
+                  padding: MaterialStatePropertyAll(EdgeInsets.all(0))),
+              onPressed: () {},
+              child: SizedBox(
+                child: ListTile(
+                  leading: ClipOval(
+                    child: Image.network(data[index]['photoUrl']),
+                  ),
+                  title: Text(
+                    data[index]['name'],
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(
+                    data[index]['message'],
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)),
                 ),
-                title: Text(data[index]['name'], style: const TextStyle(fontWeight: FontWeight.bold),),
-                subtitle: Text(data[index]['message'], style: const TextStyle(color: Colors.grey),),
-                // trailing: IconButton(
-                //   icon: const Icon(Icons.more_vert),
-                //   onPressed: () {},
-                // ),
-                tileColor: const Color(0xFFF2DBE2),
-                shape:
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
               ),
-            ),
+            )),
           );
         },
         itemCount: data.length,
         separatorBuilder: (context, index) {
           return const Divider(
-            thickness: 1,
-            color: Colors.white,
+            thickness: 0.3,
+            color: AppColors.coklat,
           );
         },
       ),

@@ -6,7 +6,12 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import 'view_edit_info_page.dart';
+import 'view_langganan.dart';
 import 'view_pengaturan.dart';
+import 'view_pengunjung_saya.dart';
+import 'view_saya_suka.dart';
+import 'view_suka_saya_page.dart';
 
 class ViewProfilePage extends StatelessWidget {
   const ViewProfilePage({super.key});
@@ -73,11 +78,11 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            const Row(children: [
+             Row(children: [
               Stack(
                 alignment: Alignment.bottomRight,
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 64,
                     backgroundColor: AppColors.pink,
                     child: CircleAvatar(
@@ -88,18 +93,28 @@ class _ProfilePageState extends State<ProfilePage> {
                   CircleAvatar(
                       radius: 20,
                       backgroundColor: AppColors.pinkMerah,
-                      child: CircleAvatar(
-                        radius: 18,
-                        backgroundColor: AppColors.pinkMerah,
-                        child: Icon(
-                          Icons.edit,
-                          size: 20,
-                          color: AppColors.putih,
+                      // ignore: avoid_unnecessary_containers
+                      child: Container(
+                        child: InkWell(
+                          onTap: () {
+                            Get.to(const ViewEditInfoPage(
+                                    data: '',
+                                  ));
+                          },
+                          child: const CircleAvatar(
+                            radius: 18,
+                            backgroundColor: AppColors.pinkMerah,
+                            child: Icon(
+                              Icons.edit,
+                              size: 20,
+                              color: AppColors.putih,
+                            ),
+                          ),
                         ),
                       ))
                 ],
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(bottom: 60, left: 15),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -159,7 +174,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             'VIP',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 30,
+                                fontSize: 35,
                                 color: AppColors.putih),
                           ),
                           subtitle: Text('Harga Rp. 30.000',
@@ -185,7 +200,7 @@ class _ProfilePageState extends State<ProfilePage> {
                             'Premium ',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
-                                fontSize: 30,
+                                fontSize: 25,
                                 color: AppColors.putih),
                           ),
                           subtitle: Text('Harga Rp. 50.000',
@@ -237,7 +252,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 style: const ButtonStyle(
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(const ViewSukaSayaPage(
+                                    data: '',
+                                  ));
+                                },
                                 child: Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceBetween,
@@ -323,7 +342,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 style: const ButtonStyle(
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(const ViewPengunjungSayaPage(
+                                    data: '',
+                                  ));
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -388,7 +411,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 style: const ButtonStyle(
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(const ViewSayaSukaPage(
+                                    data: '',
+                                  ));
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -460,7 +487,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                 style: const ButtonStyle(
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Get.to(const ViewLanggananPage(
+                                    data: '',
+                                  ));
+                                },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.center,
