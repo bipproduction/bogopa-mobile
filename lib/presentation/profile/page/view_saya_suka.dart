@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -105,6 +103,22 @@ class _SayaSukaPageState extends State<SayaSukaPage> {
                                 'https://i.pravatar.cc/200?img=2')),
                       )),
                       Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10)),
+                              gradient: LinearGradient(
+                                  begin: FractionalOffset.topCenter,
+                                  end: FractionalOffset.bottomCenter,
+                                  colors: [
+                                    Colors.white.withOpacity(0),
+                                    Colors.black,
+                                  ],
+                                  stops: const [
+                                    0.0,
+                                    1.0,
+                                  ])),
                           alignment: Alignment.bottomRight,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
@@ -172,6 +186,22 @@ class _SayaSukaPageState extends State<SayaSukaPage> {
                                 'https://i.pravatar.cc/200?img=1')),
                       )),
                       Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10)),
+                              gradient: LinearGradient(
+                                  begin: FractionalOffset.topCenter,
+                                  end: FractionalOffset.bottomCenter,
+                                  colors: [
+                                    Colors.white.withOpacity(0),
+                                    Colors.black,
+                                  ],
+                                  stops: const [
+                                    0.0,
+                                    1.0,
+                                  ])),
                           alignment: Alignment.bottomRight,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
@@ -239,6 +269,22 @@ class _SayaSukaPageState extends State<SayaSukaPage> {
                                 'https://i.pravatar.cc/200?img=10')),
                       )),
                       Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10)),
+                              gradient: LinearGradient(
+                                  begin: FractionalOffset.topCenter,
+                                  end: FractionalOffset.bottomCenter,
+                                  colors: [
+                                    Colors.white.withOpacity(0),
+                                    Colors.black,
+                                  ],
+                                  stops: const [
+                                    0.0,
+                                    1.0,
+                                  ])),
                           alignment: Alignment.bottomRight,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),
@@ -306,6 +352,22 @@ class _SayaSukaPageState extends State<SayaSukaPage> {
                                 'https://i.pravatar.cc/200?img=19')),
                       )),
                       Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: const BorderRadius.only(
+                                  bottomLeft: Radius.circular(10),
+                                  bottomRight: Radius.circular(10)),
+                              gradient: LinearGradient(
+                                  begin: FractionalOffset.topCenter,
+                                  end: FractionalOffset.bottomCenter,
+                                  colors: [
+                                    Colors.white.withOpacity(0),
+                                    Colors.black,
+                                  ],
+                                  stops: const [
+                                    0.0,
+                                    1.0,
+                                  ])),
                           alignment: Alignment.bottomRight,
                           child: Padding(
                             padding: const EdgeInsets.all(10.0),

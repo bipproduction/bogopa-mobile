@@ -49,8 +49,9 @@ class _DatingPageState extends State<DatingPage> {
                                   color: AppColors.pink,
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.only(top: 15, bottom: 15, right: 20, left: 20),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 15, bottom: 15, right: 20, left: 20),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -63,35 +64,46 @@ class _DatingPageState extends State<DatingPage> {
                                         children: <Widget>[
                                           Row(
                                             children: [
-                                              Text('ECA AURA',
-                                                  softWrap: false,
-                                                  overflow: TextOverflow.fade,
-                                                  style: TextStyle(
-                                                      color: AppColors.coklat,
-                                                      fontSize: 17,
-                                                      fontWeight: FontWeight.bold)),
-                                                      SizedBox(width: 10),
-                                              Text('20',
-                                                  softWrap: false,
-                                                  overflow: TextOverflow.fade,
-                                                  style: TextStyle(
-                                                      color: AppColors.coklat,
-                                                      fontSize: 18,
-                                                      fontWeight: FontWeight.bold)),
+                                              Text(
+                                                'ECA AURA',
+                                                softWrap: false,
+                                                overflow: TextOverflow.fade,
+                                                style: GoogleFonts.poppins(
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 17.0,
+                                                        color: AppColors.coklat,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ),
+                                              const SizedBox(width: 10),
+                                              Text(
+                                                '20',
+                                                softWrap: false,
+                                                overflow: TextOverflow.fade,
+                                                style: GoogleFonts.poppins(
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 18.0,
+                                                        color: AppColors.coklat,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ),
                                             ],
                                           ),
-                                          SizedBox(height: 4),
-                                          Text('Denpasar Barat',
-                                              softWrap: false,
-                                              overflow: TextOverflow.fade,
-                                              style: TextStyle(
-                                                  color: AppColors.coklat,
-                                                  fontSize: 13,
-                                                  fontWeight:
-                                                      FontWeight.normal))
+                                          const SizedBox(height: 4),
+                                          Text(
+                                            'Denpasar Barat',
+                                            softWrap: false,
+                                            overflow: TextOverflow.fade,
+                                            style: GoogleFonts.poppins(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 13.0,
+                                                    color: AppColors.coklat,
+                                                    fontWeight:
+                                                        FontWeight.normal)),
+                                          ),
                                         ],
                                       ),
-                                      Padding(
+                                      const Padding(
                                         padding: EdgeInsets.all(0),
                                         child: Icon(
                                           Icons.person,
@@ -145,8 +157,9 @@ class _DatingPageState extends State<DatingPage> {
                                   color: AppColors.pink,
                                   borderRadius: BorderRadius.circular(15.0),
                                 ),
-                                child: const Padding(
-                                  padding: EdgeInsets.only(top: 15, bottom: 15, right: 20, left: 20),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 15, bottom: 15, right: 20, left: 20),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -159,35 +172,46 @@ class _DatingPageState extends State<DatingPage> {
                                         children: <Widget>[
                                           Row(
                                             children: [
-                                              Text('NOT NOT',
-                                                  softWrap: false,
-                                                  overflow: TextOverflow.fade,
-                                                  style: TextStyle(
-                                                      color: AppColors.coklat,
-                                                      fontSize: 17,
-                                                      fontWeight: FontWeight.bold)),
-                                                      SizedBox(width: 10),
-                                              Text('21',
-                                                  softWrap: false,
-                                                  overflow: TextOverflow.fade,
-                                                  style: TextStyle(
-                                                      color: AppColors.coklat,
-                                                      fontSize: 18,
-                                                      fontWeight: FontWeight.bold)),
+                                              Text(
+                                                'NOT NOT',
+                                                softWrap: false,
+                                                overflow: TextOverflow.fade,
+                                                style: GoogleFonts.poppins(
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 17.0,
+                                                        color: AppColors.coklat,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ),
+                                              const SizedBox(width: 10),
+                                              Text(
+                                                '21',
+                                                softWrap: false,
+                                                overflow: TextOverflow.fade,
+                                                style: GoogleFonts.poppins(
+                                                    textStyle: const TextStyle(
+                                                        fontSize: 17.0,
+                                                        color: AppColors.coklat,
+                                                        fontWeight:
+                                                            FontWeight.bold)),
+                                              ),
                                             ],
                                           ),
-                                          SizedBox(height: 4),
-                                          Text('Denpasar Timur',
-                                              softWrap: false,
-                                              overflow: TextOverflow.fade,
-                                              style: TextStyle(
-                                                  color: AppColors.coklat,
-                                                  fontSize: 13,
-                                                  fontWeight:
-                                                      FontWeight.normal))
+                                          const SizedBox(height: 4),
+                                          Text(
+                                            'Denpasar Timur',
+                                            softWrap: false,
+                                            overflow: TextOverflow.fade,
+                                            style: GoogleFonts.poppins(
+                                                textStyle: const TextStyle(
+                                                    fontSize: 13.0,
+                                                    color: AppColors.coklat,
+                                                    fontWeight:
+                                                        FontWeight.normal)),
+                                          ),
                                         ],
                                       ),
-                                      Padding(
+                                      const Padding(
                                         padding: EdgeInsets.all(0),
                                         child: Icon(
                                           Icons.person,
@@ -212,7 +236,6 @@ class _DatingPageState extends State<DatingPage> {
         ),
       ),
     ),
-
   ];
 
   final controller = CardSwiperController();
