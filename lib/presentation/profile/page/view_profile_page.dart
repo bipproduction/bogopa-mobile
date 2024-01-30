@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
 import 'view_edit_info_page.dart';
+import 'view_info_profile_page.dart';
 import 'view_langganan.dart';
 import 'view_pengaturan.dart';
 import 'view_pengunjung_saya.dart';
@@ -78,17 +79,25 @@ class _ProfilePageState extends State<ProfilePage> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-             Row(children: [
+            Row(children: [
               Stack(
                 alignment: Alignment.bottomRight,
                 children: [
-                  const CircleAvatar(
-                    radius: 64,
-                    backgroundColor: AppColors.pink,
-                    child: CircleAvatar(
-                        radius: 60,
-                        backgroundImage:
-                            NetworkImage('https://i.pravatar.cc/200?img=4')),
+                  // ignore: avoid_unnecessary_containers
+                  Container(
+                    child: InkWell(
+                      onTap: () {
+                        Get.to(const ViewInfoProfilePage(), transition: Transition.noTransition);
+                      },
+                      child: const CircleAvatar(
+                        radius: 64,
+                        backgroundColor: AppColors.pink,
+                        child: CircleAvatar(
+                            radius: 60,
+                            backgroundImage: NetworkImage(
+                                'https://i.pravatar.cc/200?img=4')),
+                      ),
+                    ),
                   ),
                   CircleAvatar(
                       radius: 20,
@@ -98,8 +107,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: InkWell(
                           onTap: () {
                             Get.to(const ViewEditInfoPage(
-                                    data: '',
-                                  ));
+                              data: '',
+                            ));
                           },
                           child: const CircleAvatar(
                             radius: 18,
