@@ -1,5 +1,9 @@
 import 'package:bogopa_mobile/core/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../page/view_info_profile_user.dart';
+import '../page/view_room_chat.dart';
 
 class SampleListView extends StatelessWidget {
   SampleListView({super.key});
@@ -63,14 +67,20 @@ class SampleListView extends StatelessWidget {
           return Scrollbar(
             // ignore: avoid_unnecessary_containers
             child: Container(
-                child: TextButton(
-              style: const ButtonStyle(
-                  padding: MaterialStatePropertyAll(EdgeInsets.all(0))),
-              onPressed: () {},
+                child: InkWell(
+              onTap: () {
+                Get.to(const ViewRoomChatPage(), transition: Transition.noTransition);
+              },
               child: SizedBox(
                 child: ListTile(
-                  leading: ClipOval(
-                    child: Image.network(data[index]['photoUrl']),
+                  leading: InkWell(
+                    onTap: () {
+                      Get.to(const ViewInfoProfileUserPage(),
+                          transition: Transition.noTransition);
+                    },
+                    child: ClipOval(
+                      child: Image.network(data[index]['photoUrl']),
+                    ),
                   ),
                   title: Text(
                     data[index]['name'],
