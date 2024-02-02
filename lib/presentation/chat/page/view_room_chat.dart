@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../widget/input_cht_coba.dart';
 import 'view_info_profile_user.dart';
 
 enum Options { edit, hapus, putuskan }
@@ -135,7 +136,8 @@ class _RoomChatPageState extends State<RoomChatPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               BodyChat(),
-              InputText(),
+              // InputText(),
+              ReMessageInputWidget()
             ]),
       ),
     );

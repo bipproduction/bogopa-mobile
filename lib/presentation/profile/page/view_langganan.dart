@@ -26,94 +26,183 @@ class ViewLanggananPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: AppColors.putih,
-        appBar: AppBar(
+      home: DefaultTabController(
+        length: 3,
+        child: Scaffold(
           backgroundColor: AppColors.putih,
-          leadingWidth: 200,
-          leading: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Row(
-              children: [
-                const SizedBox(
-                  width: 2,
+          appBar: AppBar(
+            backgroundColor: AppColors.putih,
+            leadingWidth: 200,
+            leading: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                children: [
+                  const SizedBox(
+                    width: 2,
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Assets.icons.back.svg(height: 32, width: 32),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    'Langganan',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 16.0,
+                            color: AppColors.coklat,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                ],
+              ),
+            ),
+            bottom: PreferredSize(
+              preferredSize: const Size(0.0, 120.0),
+              // ignore: avoid_unnecessary_containers
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: TabBar(
+                    tabAlignment: TabAlignment.center,
+                    isScrollable: true,
+                    labelPadding: EdgeInsets.symmetric(horizontal: 5),
+                    indicatorColor: AppColors.putih,
+                    unselectedLabelColor: AppColors.coklat,
+                    dividerColor: Colors.transparent,
+                    tabs: [
+                      // ignore: sized_box_for_whitespace
+                      Container(
+                        height: 120.0,
+                        width: 330,
+                        child: const Tab(
+                          child: KartuLangganan1(),
+                        ),
+                      ),
+                      // ignore: sized_box_for_whitespace
+                      Container(
+                        height: 120.0,
+                        width: 320,
+                        child: const Tab(
+                          child: KartuLangganan2(),
+                        ),
+                      ),
+                      Container(
+                        height: 120.0,
+                        width: 330,
+                        child: const Tab(
+                          child: KartuLangganan3(),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                InkWell(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: Assets.icons.back.svg(height: 32, width: 32),
-                ),
-                const SizedBox(
-                  width: 5,
-                ),
-                Text(
-                  'Langganan',
-                  softWrap: false,
-                  overflow: TextOverflow.fade,
-                  style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                          fontSize: 16.0,
-                          color: AppColors.coklat,
-                          fontWeight: FontWeight.bold)),
-                ),
-              ],
+              ),
             ),
           ),
+          body: const TabBarView(
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 20),
+                        HargaLangganan1(),
+                        SizedBox(height: 5),
+                        ListKeuntunganLangganan1()
+                      ],
+                    ),
+                  ),
+                  ButtonLangganan1()
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 20),
+                        HargaLangganan2(),
+                        SizedBox(height: 5),
+                        ListKeuntunganLangganan2()
+                      ],
+                    ),
+                  ),
+                  ButtonLangganan2()
+                ],
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 20),
+                        HargaLangganan3(),
+                        SizedBox(height: 10),
+                        ListKeuntunganLangganan3()
+                      ],
+                    ),
+                  ),
+                  ButtonLangganan3()
+                ],
+              ),
+            ],
+          ),
         ),
-        body: const LanggananPage(),
-        bottomNavigationBar:
-            // const ButtonLangganan1(),
-            const ButtonLangganan2(),
-            // const ButtonLangganan3(),
       ),
     );
   }
 }
 
-class LanggananPage extends StatefulWidget {
-  const LanggananPage({super.key});
+// class LanggananPage extends StatefulWidget {
+//   const LanggananPage({super.key});
 
-  @override
-  State<LanggananPage> createState() => _LanggananPageState();
-}
+//   @override
+//   State<LanggananPage> createState() => _LanggananPageState();
+// }
 
-class _LanggananPageState extends State<LanggananPage> {
-  @override
-  Widget build(BuildContext context) {
-    return ListView(children: const [
-      Padding(
-        padding: EdgeInsets.symmetric(horizontal: 15.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            //card 1
-            // KartuLangganan1(),
-            // SizedBox(height: 30),
-            // HargaLangganan1(),
-            // SizedBox(height: 20),
-            // ListKeuntunganLangganan1()
-            // penutup card 1
-
-            // card 2
-            KartuLangganan2(),
-            SizedBox(height: 30),
-            HargaLangganan2(),
-            SizedBox(height: 30),
-            ListKeuntunganLangganan2()
-            // penutup card 2
-
-             //card 3
-            // KartuLangganan3(),
-            // SizedBox(height: 30),
-            // HargaLangganan3(),
-            // SizedBox(height: 20),
-            // ListKeuntunganLangganan3()
-            // penutup card 3
-
-          ],
-        ),
-      ),
-    ]);
-  }
-}
+// class _LanggananPageState extends State<LanggananPage> {
+//   @override
+//   Widget build(BuildContext context) {
+//     return ListView(children:  [
+//       Padding(
+//         padding: const EdgeInsets.symmetric(horizontal: 15.0),
+//         // ignore: avoid_unnecessary_containers
+//         child: Container(
+//           child:  DefaultTabController(
+//             length: 3,
+//             child: Scaffold(
+//               appBar: AppBar(
+//                 bottom: TabBar(
+//                   tabs: [
+//                     Tab(
+//                       child: C,
+//                     )
+//                   ]
+//                 ),
+//               )
+//             ),
+//           ),
+//         )
+//       ),
+//     ]);
+//   }
+// }
