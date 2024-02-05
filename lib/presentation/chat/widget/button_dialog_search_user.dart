@@ -2,20 +2,20 @@ import 'package:bogopa_mobile/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../pembayaran.dart';
+import '../../profile/widget/pembayaran.dart';
 
-class ButtonLangganan2 extends StatefulWidget {
-  const ButtonLangganan2({super.key});
+class ButtonDialogSearchUser extends StatefulWidget {
+  const ButtonDialogSearchUser({super.key});
 
   @override
-  State<ButtonLangganan2> createState() => _ButtonLangganan2State();
+  State<ButtonDialogSearchUser> createState() => _ButtonDialogSearchUserState();
 }
 
-class _ButtonLangganan2State extends State<ButtonLangganan2> {
+class _ButtonDialogSearchUserState extends State<ButtonDialogSearchUser> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       child: InkWell(
         onTap: () {
              showModalBottomSheet(
@@ -83,12 +83,12 @@ class _ButtonLangganan2State extends State<ButtonLangganan2> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Rp 159.000 Beli Sekarang GOLD',
+                  'Rp 59.000 Keanggotaan VIP',
                   softWrap: false,
                   overflow: TextOverflow.fade,
                   style: GoogleFonts.poppins(
                       textStyle: const TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 15.0,
                           color: AppColors.putih,
                           fontWeight: FontWeight.bold)),
                 ),

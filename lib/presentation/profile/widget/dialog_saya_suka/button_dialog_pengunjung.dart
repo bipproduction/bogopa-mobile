@@ -4,18 +4,18 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../pembayaran.dart';
 
-class ButtonLangganan2 extends StatefulWidget {
-  const ButtonLangganan2({super.key});
+class ButtonDialogSayaSuka extends StatefulWidget {
+  const ButtonDialogSayaSuka({super.key});
 
   @override
-  State<ButtonLangganan2> createState() => _ButtonLangganan2State();
+  State<ButtonDialogSayaSuka> createState() => _ButtonDialogSayaSukaState();
 }
 
-class _ButtonLangganan2State extends State<ButtonLangganan2> {
+class _ButtonDialogSayaSukaState extends State<ButtonDialogSayaSuka> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15),
+      padding: const EdgeInsets.all(10),
       child: InkWell(
         onTap: () {
              showModalBottomSheet(
@@ -74,7 +74,7 @@ class _ButtonLangganan2State extends State<ButtonLangganan2> {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: const Color(0xFF684105),
+            color: const Color(0xFF959494),
           ),
           child: Padding(
             padding: const EdgeInsets.all(15.0),
@@ -83,12 +83,12 @@ class _ButtonLangganan2State extends State<ButtonLangganan2> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Rp 159.000 Beli Sekarang GOLD',
+                  'Rp 59.000 Keanggotaan VIP',
                   softWrap: false,
                   overflow: TextOverflow.fade,
                   style: GoogleFonts.poppins(
                       textStyle: const TextStyle(
-                          fontSize: 18.0,
+                          fontSize: 15.0,
                           color: AppColors.putih,
                           fontWeight: FontWeight.bold)),
                 ),

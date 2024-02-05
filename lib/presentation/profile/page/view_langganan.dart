@@ -71,7 +71,7 @@ class ViewLanggananPage extends StatelessWidget {
                   child: TabBar(
                     tabAlignment: TabAlignment.center,
                     isScrollable: true,
-                    labelPadding: EdgeInsets.symmetric(horizontal: 5),
+                    labelPadding: const EdgeInsets.symmetric(horizontal: 5),
                     indicatorColor: AppColors.putih,
                     unselectedLabelColor: AppColors.coklat,
                     dividerColor: Colors.transparent,
@@ -92,6 +92,7 @@ class ViewLanggananPage extends StatelessWidget {
                           child: KartuLangganan2(),
                         ),
                       ),
+                      // ignore: sized_box_for_whitespace
                       Container(
                         height: 120.0,
                         width: 330,

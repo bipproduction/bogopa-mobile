@@ -2,6 +2,7 @@ import 'package:bogopa_mobile/presentation/chat/widget/bubble_live.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../core/constants/colors.dart';
+import '../widget/dialog_search.dart';
 import '../widget/view_chat_item.dart';
 
 class ViewChatPage extends StatelessWidget {
@@ -39,7 +40,9 @@ class ViewChatPage extends StatelessWidget {
                       color: AppColors.coklat,
                     )),
                 onPressed: () {
-                  
+                  showDialog(
+                      context: context,
+                      builder: (context) => const CustomDialogSearch());
                 },
               ),
             )

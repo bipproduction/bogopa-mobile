@@ -129,7 +129,7 @@ class _DataFormState extends State<DataForm> {
                         );
                         Get.to(const VerifikasiKode(
                           data: '',
-                        ));
+                        ), transition: Transition.noTransition);
                       }
                     },
                     style: ElevatedButton.styleFrom(

@@ -154,7 +154,7 @@ class _DatakataSandiState extends State<DatakataSandi> {
                         );
                         Get.to(const LoginMasuk(
                           data: '',
-                        ));
+                        ), transition: Transition.noTransition);
                       }
                     },
                     style: ElevatedButton.styleFrom(

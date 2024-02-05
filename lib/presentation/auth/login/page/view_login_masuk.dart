@@ -133,7 +133,7 @@ class _DataLoginMasukState extends State<DataLoginMasuk> {
                         );
                         Get.to(const ViewDataProfile(
                           data: '',
-                        ));
+                        ), transition: Transition.noTransition);
                       }
                     },
                     style: ElevatedButton.styleFrom(

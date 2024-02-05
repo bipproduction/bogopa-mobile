@@ -254,7 +254,7 @@ class _DatingPageState extends State<DatingPage> {
             onPressed: () {
               Get.to(const ListDating(
                 data: '',
-              ));
+              ), transition: Transition.noTransition);
             },
             child: Assets.icons.list.svg(
                 height: 24,
