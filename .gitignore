@@ -32,7 +32,7 @@ migrate_working_dir/
 /build/
 
 # pengecualian build web
-!/build/web
+!build/web
 
 # Symbolication related
 app.*.symbols
