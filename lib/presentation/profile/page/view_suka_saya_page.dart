@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../widget/dialog_suka_saya/dialog_suka_suka.dart';
 
 class ViewSukaSayaPage extends StatelessWidget {
   const ViewSukaSayaPage({super.key, required this.data});
@@ -67,7 +68,11 @@ class _SukaSataPageState extends State<SukaSataPage> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const CustomDialogSukaSaya());
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageFiltered(
@@ -79,7 +84,11 @@ class _SukaSataPageState extends State<SukaSataPage> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
-                  onTap: () {},
+                 onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const CustomDialogSukaSaya());
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageFiltered(
@@ -91,7 +100,11 @@ class _SukaSataPageState extends State<SukaSataPage> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
-                  onTap: () {},
+                 onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const CustomDialogSukaSaya());
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageFiltered(
@@ -103,7 +116,11 @@ class _SukaSataPageState extends State<SukaSataPage> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
-                  onTap: () {},
+                 onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const CustomDialogSukaSaya());
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageFiltered(
@@ -115,7 +132,11 @@ class _SukaSataPageState extends State<SukaSataPage> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const CustomDialogSukaSaya());
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageFiltered(
@@ -127,7 +148,11 @@ class _SukaSataPageState extends State<SukaSataPage> {
             Container(
                 padding: const EdgeInsets.all(10),
                 child: InkWell(
-                  onTap: () {},
+                 onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) => const CustomDialogSukaSaya());
+                  },
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: ImageFiltered(

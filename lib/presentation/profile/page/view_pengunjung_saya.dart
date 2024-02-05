@@ -1,11 +1,10 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../widget/dialog_pengunjung.dart/dialog_pengunjung.dart';
 
 class ViewPengunjungSayaPage extends StatelessWidget {
   const ViewPengunjungSayaPage({super.key, required this.data});
@@ -98,12 +97,10 @@ class _PengunjungSayaPageState extends State<PengunjungSayaPage> {
                           data[index]['name'],
                           style: const TextStyle(fontWeight: FontWeight.bold),
                         ),
-                        
-                          Container(
-                            height: 20,
-                            color: Colors.black.withOpacity(1),
-                          ),
-                        
+                        Container(
+                          height: 20,
+                          color: Colors.black.withOpacity(1),
+                        ),
                       ],
                     ),
                     subtitle: Text(
@@ -116,7 +113,12 @@ class _PengunjungSayaPageState extends State<PengunjungSayaPage> {
                       style: const ButtonStyle(
                           backgroundColor:
                               MaterialStatePropertyAll(AppColors.pinkMerah)),
-                      onPressed: () {},
+                      onPressed: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) =>
+                                const CustomDialogPegunjung());
+                      },
                       child: Text(
                         'Lihat',
                         softWrap: false,

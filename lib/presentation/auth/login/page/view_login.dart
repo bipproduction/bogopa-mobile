@@ -61,7 +61,7 @@ class _ViewLoginState extends State<ViewLogin> {
                         children: [
                           TextButton(
                               onPressed: () {
-                                Get.to(const FormPhone(data: ''));
+                                Get.to(const FormPhone(data: ''), transition: Transition.noTransition);
                               },
                               child: SizedBox(
                                 child: Row(
@@ -125,16 +125,16 @@ class _ViewLoginState extends State<ViewLogin> {
                     ],
                   ),
                 ),
-                TextButton(
-                    style: const ButtonStyle(
-                        backgroundColor: MaterialStatePropertyAll(Colors.blue)),
-                    onPressed: () => {
-                          Get.to(const DashboardPage(
-                            key: Key(''),
-                            currentTab: 0,
-                          ))
-                        },
-                    child: const Text("kesana")),
+                // TextButton(
+                //     style: const ButtonStyle(
+                //         backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                //     onPressed: () => {
+                //           Get.to(const DashboardPage(
+                //             key: Key(''),
+                //             currentTab: 0,
+                //           ))
+                //         },
+                //     child: const Text("kesana")),
               ]),
         ),
       ),

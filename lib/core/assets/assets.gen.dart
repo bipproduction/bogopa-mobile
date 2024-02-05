@@ -74,11 +74,20 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/bca.png
+  AssetGenImage get bca => const AssetGenImage('assets/images/bca.png');
+
+  /// File path: assets/images/bri.png
+  AssetGenImage get bri => const AssetGenImage('assets/images/bri.png');
+
   /// File path: assets/images/c1.png
   AssetGenImage get c1 => const AssetGenImage('assets/images/c1.png');
 
   /// File path: assets/images/c2.png
   AssetGenImage get c2 => const AssetGenImage('assets/images/c2.png');
+
+  /// File path: assets/images/dana.png
+  AssetGenImage get dana => const AssetGenImage('assets/images/dana.png');
 
   /// File path: assets/images/foto_belakang.png
   AssetGenImage get fotoBelakang =>
@@ -99,20 +108,31 @@ class $AssetsImagesGen {
   /// File path: assets/images/gold.png
   AssetGenImage get gold => const AssetGenImage('assets/images/gold.png');
 
+  /// File path: assets/images/gopay.png
+  AssetGenImage get gopay => const AssetGenImage('assets/images/gopay.png');
+
   /// File path: assets/images/logo_foto.png
   AssetGenImage get logoFoto =>
       const AssetGenImage('assets/images/logo_foto.png');
 
+  /// File path: assets/images/mandiri.png
+  AssetGenImage get mandiri => const AssetGenImage('assets/images/mandiri.png');
+
   /// List of all assets
   List<AssetGenImage> get values => [
+        bca,
+        bri,
         c1,
         c2,
+        dana,
         fotoBelakang,
         fotoDepan,
         fotoPemandangan,
         fotoUser,
         gold,
-        logoFoto
+        gopay,
+        logoFoto,
+        mandiri
       ];
 }
 

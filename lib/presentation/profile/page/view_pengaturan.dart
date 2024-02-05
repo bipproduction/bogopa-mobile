@@ -378,7 +378,7 @@ class _ViewPengaturanPageState extends State<ViewPengaturanPage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    Get.to(const ViewLogin());
+                    Get.to(const ViewLogin(), transition: Transition.noTransition);
                   },
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(60),

@@ -98,7 +98,7 @@ class _DataTampilFotoState extends State<DataTampilFoto> {
                       Get.to(const DashboardPage(
                         key: Key(''),currentTab: 0,
 
-                      ));
+                      ), transition: Transition.noTransition);
                     },
                     style: ElevatedButton.styleFrom(
                         minimumSize: const Size.fromHeight(60),

@@ -270,7 +270,7 @@ class _DataProfileState extends State<DataProfile> {
                         );
                         Get.to(const ViewInputFoto(
                           data: '',
-                        ));
+                        ), transition: Transition.noTransition);
                       }
                     },
                     style: ElevatedButton.styleFrom(

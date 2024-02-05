@@ -1,53 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../core/constants/colors.dart';
-import 'button_dialog_putar_bali.dart';
-import 'dialog_putar_balik.dart';
+import '../../../../core/constants/colors.dart';
+import 'button_dialog_pengunjung.dart';
+import 'harga_dialog_pengunjung.dart';
 
-class ModalList extends StatelessWidget {
-  const ModalList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ViewModalList(),
-    );
-  }
-}
-
-class ViewModalList extends StatelessWidget {
-  const ViewModalList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-        icon: const Badge(
-            label: Text(
-              'VIP',
-              style: TextStyle(color: AppColors.coklat),
-            ),
-            backgroundColor: Colors.yellow,
-            child: Icon(
-              Icons.settings_backup_restore,
-              color: AppColors.coklat,
-            )),
-        onPressed: () {
-          showDialog(
-              context: context, builder: (context) => const CustomDialogData());
-        });
-  }
-}
-
-class CustomDialogData extends StatelessWidget {
-  const CustomDialogData({super.key});
+class CustomDialogPegunjung extends StatelessWidget {
+  const CustomDialogPegunjung({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Dialog(
       child: Stack(
         children: [
-          const CardDialog(),
+          const CardDialogPengunjung(),
           Row(
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -70,8 +35,8 @@ class CustomDialogData extends StatelessWidget {
   }
 }
 
-class CardDialog extends StatelessWidget {
-  const CardDialog({
+class CardDialogPengunjung extends StatelessWidget {
+  const CardDialogPengunjung({
     super.key,
   });
 
@@ -88,7 +53,7 @@ class CardDialog extends StatelessWidget {
             height: 20,
           ),
           Text(
-            'PUTAR BALIK',
+            'PREMIUM',
             softWrap: false,
             overflow: TextOverflow.fade,
             style: GoogleFonts.poppins(
@@ -111,11 +76,11 @@ class CardDialog extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const DialogPutarBalik(),
+          const HargaDialogPengunjung(),
           const SizedBox(
             height: 20,
           ),
-          const ButtonDialogPutarBalik()
+          const ButtonDialogPengunjung()
         ],
       ),
     );

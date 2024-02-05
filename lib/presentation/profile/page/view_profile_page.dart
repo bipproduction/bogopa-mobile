@@ -30,7 +30,7 @@ class ViewProfilePage extends StatelessWidget {
               onPressed: () {
                 Get.to(const ViewPengaturan(
                   data: '',
-                ));
+                ), transition: Transition.noTransition);
               },
               child: Assets.icons.setting.svg(
                   height: 24,
@@ -108,7 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           onTap: () {
                             Get.to(const ViewEditInfoPage(
                               data: '',
-                            ));
+                            ), transition: Transition.noTransition);
                           },
                           child: const CircleAvatar(
                             radius: 18,
@@ -264,7 +264,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 onPressed: () {
                                   Get.to(const ViewSukaSayaPage(
                                     data: '',
-                                  ));
+                                  ), transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment:
@@ -354,7 +354,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 onPressed: () {
                                   Get.to(const ViewPengunjungSayaPage(
                                     data: '',
-                                  ));
+                                  ), transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -423,7 +423,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 onPressed: () {
                                   Get.to(const ViewSayaSukaPage(
                                     data: '',
-                                  ));
+                                  ), transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -499,7 +499,7 @@ class _ProfilePageState extends State<ProfilePage> {
                                 onPressed: () {
                                   Get.to(const ViewLanggananPage(
                                     data: '',
-                                  ));
+                                  ), transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,

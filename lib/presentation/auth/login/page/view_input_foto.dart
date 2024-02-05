@@ -172,7 +172,7 @@ class _DataInputFotoState extends State<DataInputFoto> {
                   onPressed: () {
                     Get.to(const ViewTampilFoto(
                           data: '',
-                        ));
+                        ), transition: Transition.noTransition);
                   },
                   style: ElevatedButton.styleFrom(
                       minimumSize: const Size.fromHeight(70),

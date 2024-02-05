@@ -204,7 +204,7 @@ class _FormVerifikasiState extends State<FormVerifikasi> {
                             formKey.currentState!.validate();
                             Get.to(const KataSandi(
                               data: '',
-                            ));
+                            ), transition: Transition.noTransition);
                           },
                           style: ElevatedButton.styleFrom(
                               minimumSize: const Size.fromHeight(50),
