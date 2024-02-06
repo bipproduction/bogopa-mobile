@@ -136,66 +136,12 @@ class _RoomChatPageState extends State<RoomChatPage> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               BodyChat(),
-              // InputText(),
               ReMessageInputWidget()
             ]),
       ),
     );
   }
 }
-
-class InputText extends StatelessWidget {
-  const InputText({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 10),
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        color: Colors.white,
-        child: const Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: TextField(
-                decoration: InputDecoration(
-                  suffixIcon: Icon(
-                    Icons.attach_file,
-                    color: AppColors.pinkMerah,
-                    size: 30,
-                  ),
-                  prefixIcon: Icon(
-                    Icons.sentiment_satisfied,
-                    color: AppColors.pinkMerah,
-                    size: 30,
-                  ),
-                  hintText: "Message...",
-                  hintStyle: TextStyle(color: AppColors.coklat),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30)),
-                      borderSide: BorderSide(color: Colors.blue)),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 10,
-            ),
-            Icon(
-              Icons.mic,
-              color: AppColors.pinkMerah,
-              size: 35,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 class BodyChat extends StatelessWidget {
   const BodyChat({
     super.key,

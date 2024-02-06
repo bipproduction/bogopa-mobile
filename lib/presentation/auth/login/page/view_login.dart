@@ -6,6 +6,7 @@ import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../dashboard_page/dashboard_page.dart';
+
 // import 'package:get/get.dart';
 
 class ViewLogin extends StatefulWidget {
@@ -125,16 +126,16 @@ class _ViewLoginState extends State<ViewLogin> {
                     ],
                   ),
                 ),
-                // TextButton(
-                //     style: const ButtonStyle(
-                //         backgroundColor: MaterialStatePropertyAll(Colors.blue)),
-                //     onPressed: () => {
-                //           Get.to(const DashboardPage(
-                //             key: Key(''),
-                //             currentTab: 0,
-                //           ))
-                //         },
-                //     child: const Text("kesana")),
+                TextButton(
+                    style: const ButtonStyle(
+                        backgroundColor: MaterialStatePropertyAll(Colors.blue)),
+                    onPressed: () => {
+                          Get.to(const DashboardPage(
+                            key: Key(''),
+                            currentTab: 0,
+                          ))
+                        },
+                    child: const Text("kesana")),
               ]),
         ),
       ),

@@ -20,20 +20,6 @@ class _ListKeuntunganLangganan2State extends State<ListKeuntunganLangganan2> {
         children: <Widget>[
           Column(
             children: [
-              Row(
-                children: [
-                  Text(
-                    'GOLD',
-                    softWrap: false,
-                    overflow: TextOverflow.fade,
-                    style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                            fontSize: 20.0,
-                            color: AppColors.coklat,
-                            fontWeight: FontWeight.normal)),
-                  ),
-                ],
-              ),
               const SizedBox(height: 10.0),
               // ignore: avoid_unnecessary_containers
               Container(
