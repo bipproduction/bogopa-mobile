@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../../profile/widget/jarak.dart';
+import '../../profile/widget/usia.dart';
+const List<String> list = <String>[ 'Wanita', 'Laki-Laki'];
 
 class ListDating extends StatelessWidget {
   const ListDating({super.key, required this.data});
@@ -48,6 +51,7 @@ class ViewListDating extends StatefulWidget {
 
 class _ViewListDatingState extends State<ViewListDating> {
   bool _checkbox = false;
+    String dropdownValue = list.first;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -69,118 +73,141 @@ class _ViewListDatingState extends State<ViewListDating> {
                         color: AppColors.pinkMerah,
                         fontWeight: FontWeight.normal)),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 30.0),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      'Lokasi',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                    const Spacer(),
-                    Text(
-                      'Sesuaikan Lokasi',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.pinkMerah,
-                              fontWeight: FontWeight.normal)),
-                    )
-                  ],
-                ),
+              const SizedBox(
+                height: 25,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40.0),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      'Jarak',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                    const Spacer(),
-                    Text(
-                      '75Km',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.pinkMerah,
-                              fontWeight: FontWeight.normal)),
-                    )
-                  ],
-                ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Lokasi',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.coklat,
+                            fontWeight: FontWeight.normal)),
+                  ),
+                  const Spacer(),
+                  Text(
+                    'Sesuaikan Lokasi',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.pinkMerah,
+                            fontWeight: FontWeight.normal)),
+                  )
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40.0),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      'Tampilkan',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                    const Spacer(),
-                    Text(
-                      'Wanita',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.pinkMerah,
-                              fontWeight: FontWeight.normal)),
-                    )
-                  ],
-                ),
+              const SizedBox(
+                height: 30,
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40.0),
-                child: Row(
-                  children: <Widget>[
-                    Text(
-                      'Usia',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                    const Spacer(),
-                    Text(
-                      '20 - 25',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 14.0,
-                              color: AppColors.pinkMerah,
-                              fontWeight: FontWeight.normal)),
-                    )
-                  ],
-                ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Jarak',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.coklat,
+                            fontWeight: FontWeight.normal)),
+                  ),
+                  const Spacer(),
+                  Text(
+                    '75Km',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.pinkMerah,
+                            fontWeight: FontWeight.normal)),
+                  )
+                ],
               ),
+              const JaratWidget(),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Tampilkan',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.coklat,
+                            fontWeight: FontWeight.normal)),
+                  ),
+                  const Spacer(),
+                  DropdownButton<String>(
+                    value: dropdownValue,
+                    elevation: 20,
+                    style: const TextStyle(color: Colors.deepPurple),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.white,
+                    ),
+                    onChanged: (String? value) {
+                      // This is called when the user selects an item.
+                      setState(() {
+                        dropdownValue = value!;
+                      });
+                    },
+                    items: list.map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(
+                    value,
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.pinkMerah,
+                            fontWeight: FontWeight.normal)),
+                  ),
+                      );
+                    }).toList(),
+                  )
+                  
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                children: <Widget>[
+                  Text(
+                    'Usia',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.coklat,
+                            fontWeight: FontWeight.normal)),
+                  ),
+                  const Spacer(),
+                  Text(
+                    '20 - 30',
+                    softWrap: false,
+                    overflow: TextOverflow.fade,
+                    style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            fontSize: 14.0,
+                            color: AppColors.pinkMerah,
+                            fontWeight: FontWeight.normal)),
+                  )
+                ],
+              ),
+              const UsiaWidget(),
               Padding(
                 padding: const EdgeInsets.only(top: 40.0),
                 child: Row(
@@ -200,16 +227,17 @@ class _ViewListDatingState extends State<ViewListDating> {
                                       color: AppColors.pinkMerah,
                                       fontWeight: FontWeight.normal)),
                             ),
-                            const SizedBox(width: 5,),
+                            const SizedBox(
+                              width: 5,
+                            ),
                             Container(
                               width: 20,
                               height: 13,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2),
                                   color: const Color(0xFFAF810B)),
-
                               child: const Center(
-                                child:  Text(
+                                child: Text(
                                   'VIP',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -298,17 +326,21 @@ class _ViewListDatingState extends State<ViewListDating> {
                                       color: AppColors.pinkMerah,
                                       fontWeight: FontWeight.normal)),
                             ),
-                            const SizedBox(width: 5,),
+                            const SizedBox(
+                              width: 5,
+                            ),
                             Container(
                               width: 20,
                               height: 13,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(2),
                                   color: const Color(0xFFAF810B)),
-
                               child: const Center(
-                                child:  Icon(Icons.diamond, color: Colors.white, size: 10,)
-                              ),
+                                  child: Icon(
+                                Icons.diamond,
+                                color: Colors.white,
+                                size: 10,
+                              )),
                             )
                           ],
                         ),

@@ -17,20 +17,6 @@ class _ListKeuntunganLangganan3State extends State<ListKeuntunganLangganan3> {
     return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Row(
-            children: [
-              Text(
-                'PREMIUM',
-                softWrap: false,
-                overflow: TextOverflow.fade,
-                style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        fontSize: 20.0,
-                        color: AppColors.coklat,
-                        fontWeight: FontWeight.normal)),
-              ),
-            ],
-          ),
           const SizedBox(height: 10.0),
           Column(
               children: [
