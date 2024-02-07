@@ -1,13 +1,50 @@
+import 'dart:developer';
+
+import 'package:bogopa_mobile/presentation/live/witget/camera.dart';
+import 'package:bogopa_mobile/presentation/live/witget/stream.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
 import '../witget/rekomendasi_page.dart';
 import '../witget/sekitar_page.dart';
 
-class ViewLivePage extends StatelessWidget {
+class ViewLivePage extends StatefulWidget {
   const ViewLivePage({super.key});
+
+  @override
+  State<ViewLivePage> createState() => _ViewLivePageState();
+}
+
+class _ViewLivePageState extends State<ViewLivePage> {
+  @override
+  void initState() {
+    load();
+    super.initState();
+  }
+
+  load() async {
+    var status = await Permission.camera.status;
+    if (status.isDenied) {
+      log("message: Permission denied");
+    }
+    await Permission.camera.request();
+    await Permission.microphone.request();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Lama();
+  }
+}
+
+class Lama extends StatelessWidget {
+  const Lama({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +58,9 @@ class ViewLivePage extends StatelessWidget {
             backgroundColor: AppColors.putih,
             actions: <Widget>[
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(const MyCamera());
+                },
                 child: Assets.icons.live.svg(
                     height: 24,
                     width: 24,
@@ -44,7 +83,7 @@ class ViewLivePage extends StatelessWidget {
                 ),
               ],
             ),
-            bottom:  const TabBar(
+            bottom: const TabBar(
               indicatorColor: AppColors.pinkMerah,
               labelColor: AppColors.pinkMerah,
               unselectedLabelColor: AppColors.coklat,
