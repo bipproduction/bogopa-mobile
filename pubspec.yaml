@@ -41,6 +41,11 @@ dependencies:
   google_fonts: ^6.1.0
   pinput: ^3.0.1
   dropdown_button2: ^2.3.9
+  video_player: ^2.8.2
+  permission_handler: ^11.2.0
+  audio_session: ^0.1.18
+  haishin_kit: ^0.12.0
+  webviewx_plus: ^0.4.1
 
 dev_dependencies:
   build_runner: ^2.4.8
