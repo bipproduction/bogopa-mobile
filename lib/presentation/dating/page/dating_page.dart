@@ -8,6 +8,7 @@ import 'package:simple_logger/simple_logger.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../widget/modal_list.dart';
 import 'list_dating_page.dart';
+import 'view_berjodoh.dart';
 
 final logger = SimpleLogger();
 
@@ -252,9 +253,11 @@ class _DatingPageState extends State<DatingPage> {
         actions: <Widget>[
           TextButton(
             onPressed: () {
-              Get.to(const ListDating(
-                data: '',
-              ), transition: Transition.noTransition);
+              Get.to(
+                  const ListDating(
+                    data: '',
+                  ),
+                  transition: Transition.noTransition);
             },
             child: Assets.icons.list.svg(
                 height: 24,
@@ -331,6 +334,7 @@ class _DatingPageState extends State<DatingPage> {
                     ElevatedButton(
                       onPressed: () {
                         controller.swipeRight();
+                        Get.to(const ViewJodoh());
                       },
                       style: ElevatedButton.styleFrom(
                         shape: const CircleBorder(),
