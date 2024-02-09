@@ -9,6 +9,7 @@ import 'package:permission_handler/permission_handler.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../witget/judul_dan_start.dart';
 import '../witget/rekomendasi_page.dart';
 import '../witget/sekitar_page.dart';
 
@@ -59,7 +60,7 @@ class Lama extends StatelessWidget {
             actions: <Widget>[
               TextButton(
                 onPressed: () {
-                  Get.to(const MyCamera());
+                  Get.to(const JudulDanStart());
                 },
                 child: Assets.icons.live.svg(
                     height: 24,

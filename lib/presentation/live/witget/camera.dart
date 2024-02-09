@@ -92,50 +92,64 @@ class _MyCameraState extends State<MyCamera> {
                 child: SizedBox(
                   width: double.infinity,
                   child: _recording
-                  ? FilledButton(
-                    style: ButtonStyle(
-                        padding: const MaterialStatePropertyAll(EdgeInsets.all(20)),
-                        backgroundColor: const MaterialStatePropertyAll<Color>(
-                            AppColors.pinkMerah),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        )), 
+                      ? FilledButton(
+                          style: ButtonStyle(
+                            padding: const MaterialStatePropertyAll(
+                                EdgeInsets.all(20)),
+                            backgroundColor:
+                                const MaterialStatePropertyAll<Color>(
+                                    AppColors.pinkMerah),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10.0),
+                            )),
+                          ),
+                          child: Text(
+                            'Mulai Siaran',
+                            softWrap: false,
+                            overflow: TextOverflow.fade,
+                            style: GoogleFonts.poppins(
+                                textStyle: const TextStyle(
+                                    fontSize: 16.0,
+                                    color: AppColors.putih,
+                                    fontWeight: FontWeight.bold)),
+                          ),
+                          onPressed: () {
+                            if (_recording) {
+                              _connection?.close();
+                              setState(() {
+                                _recording = false;
+                              });
+                            } else {
+                              _connection?.connect(
+                                  "rtmp://85.31.224.193:1935/live/apa");
+                            }
+                          },
+                        )
+                      : Ink(
+                          decoration: const ShapeDecoration(
+                            color: Colors.black,
+                            shape: CircleBorder(),
+                          ),
+                          child: IconButton(
+                            icon: const Icon(
+                              Icons.close,
+                              size: 70,
+                            ),
+                            color: Colors.white,
+                            onPressed: () {
+                              if (_recording) {
+                                _connection?.close();
+                                setState(() {
+                                  _recording = false;
+                                });
+                              } else {
+                                _connection?.connect(
+                                    "rtmp://85.31.224.193:1935/live/apa");
+                              }
+                            },
+                          ),
                         ),
-                    child: Text(
-                      'Mulai Siaran',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 16.0,
-                              color: AppColors.putih,
-                              fontWeight: FontWeight.bold)),
-                    ),
-                    onPressed: () {
-                if (_recording) {
-                  _connection?.close();
-                  setState(() {
-                    _recording = false;
-                  });
-                } else {
-                  _connection?.connect("rtmp://85.31.224.193:1935/live/apa");
-                }
-              },
-                  ) : IconButton(
-            icon: const Icon(Icons.close, size: 70,),
-            color: Colors.white,
-            onPressed: () {
-              if (_recording) {
-                  _connection?.close();
-                  setState(() {
-                    _recording = false;
-                  });
-                } else {
-                  _connection?.connect("rtmp://85.31.224.193:1935/live/apa");
-                }
-            },
-          ),
                 ),
               )
             ],
@@ -143,4 +157,3 @@ class _MyCameraState extends State<MyCamera> {
     );
   }
 }
-
