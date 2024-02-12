@@ -16,6 +16,7 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,

@@ -12,7 +12,6 @@ import 'package:haishin_kit/rtmp_connection.dart';
 import 'package:haishin_kit/rtmp_stream.dart';
 import 'package:haishin_kit/video_source.dart';
 
-
 class LiveBerlangsung extends StatefulWidget {
   const LiveBerlangsung({super.key});
 
@@ -29,12 +28,11 @@ class _LiveBerlangsungState extends State<LiveBerlangsung> {
   @override
   void initState() {
     super.initState();
-    // initPlatformState();
+    initPlatformState();
   }
 
   Future<void> initPlatformState() async {
-    // Set up AVAudioSession for iOS.
-    if (!val_is_stream.value) {
+    try {
       final session = await AudioSession.instance;
       await session.configure(const AudioSessionConfiguration(
         avAudioSessionCategory: AVAudioSessionCategory.playAndRecord,
@@ -64,8 +62,8 @@ class _LiveBerlangsungState extends State<LiveBerlangsung> {
         _connection = connection;
         _stream = stream;
       });
-    } else {
-      print("stream : ${val_is_stream.value}");
+    } catch (e) {
+      print(e);
     }
   }
 
@@ -209,11 +207,17 @@ class _LiveBerlangsungState extends State<LiveBerlangsung> {
                           ),
                         ),
                         InkWell(
-                          onTap: () async {
-                            // print(val_connection.length);
-                            val_coba.value.connection!.close();
-                            // await 5.delay();
-                            // Get.to(const LiveBerakhir());
+                          onTap: () {
+                            // if (_recording) {
+                            //   _connection?.close();
+                            //   setState(() {
+                            //     _recording = false;
+                            //   });
+                            // } else {
+                            //   _connection?.connect(
+                            //       "rtmp://85.31.224.193:1935/live/apa");
+                            // }
+                            Get.to(const LiveBerakhir());
                           },
                           child: const Icon(
                             Icons.close,

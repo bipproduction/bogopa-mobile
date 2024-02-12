@@ -72,6 +72,7 @@ class _JudulDanStartState extends State<JudulDanStart> {
   Widget build(BuildContext context) {
     try {
       return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: Scaffold(
           body: Stack(
             fit: StackFit.passthrough,
