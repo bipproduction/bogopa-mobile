@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../core/constants/colors.dart';
-import '../widget/dialog_search.dart';
 import '../widget/search_user.dart';
+import '../widget/test_socket_client.dart';
 import '../widget/view_chat_item.dart';
 
 class ViewChatPage extends StatelessWidget {
@@ -42,7 +42,9 @@ class ViewChatPage extends StatelessWidget {
                       color: AppColors.coklat,
                     )),
                 onPressed: () {
-                  Get.to(const ViewSearchUser(),
+                  // Get.to(const ViewSearchUser(),
+                  //     transition: Transition.noTransition);
+                  Get.to(const TestSocket(),
                       transition: Transition.noTransition);
                   // showDialog(
                   //     context: context,

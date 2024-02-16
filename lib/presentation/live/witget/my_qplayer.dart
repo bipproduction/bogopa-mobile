@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:webviewx_plus/webviewx_plus.dart';
 
 class MyQPlayer extends StatelessWidget {
-  MyQPlayer({super.key});
+  const MyQPlayer({super.key});
 
   final content = '''
 <!DOCTYPE html>

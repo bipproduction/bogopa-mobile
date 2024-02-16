@@ -4,7 +4,6 @@ import 'dart:async';
 import 'package:audio_session/audio_session.dart';
 import 'package:bogopa_mobile/core/constants/colors.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:haishin_kit/audio_source.dart';
 import 'package:haishin_kit/net_stream_drawable_texture.dart';
@@ -64,6 +63,7 @@ class _JudulDanStartState extends State<JudulDanStart> {
         _stream = stream;
       });
     } catch (e) {
+      // ignore: avoid_print
       print(e);
     }
   }
@@ -232,7 +232,7 @@ class _JudulDanStartState extends State<JudulDanStart> {
         ),
       );
     } catch (e) {
-      return Scaffold(
+      return const Scaffold(
         body: Text("ada error"),
       );
     }
@@ -255,15 +255,16 @@ class _FormJudulState extends State<FormJudul> {
       child: SizedBox(
         width: MediaQuery.of(context).size.width / 1.8,
         child: TextFormField(
+            style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(
-          border: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.circular(10.0)),
-          isDense: true,
-          contentPadding: const EdgeInsets.all(12),
-          labelStyle: const TextStyle(fontSize: 15, color: AppColors.putih),
-          labelText: 'Isi judul ruang LIVE',
-        )),
+              border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.white),
+                  borderRadius: BorderRadius.circular(10.0)),
+              isDense: true,
+              contentPadding: const EdgeInsets.all(12),
+              labelStyle: const TextStyle(fontSize: 15, color: AppColors.putih),
+              labelText: 'Isi judul ruang LIVE',
+            )),
       ),
     );
   }

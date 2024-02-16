@@ -14,11 +14,21 @@ import 'package:flutter/services.dart';
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/acak_battle.svg
+  SvgGenImage get acakBattle =>
+      const SvgGenImage('assets/icons/acak_battle.svg');
+
   /// File path: assets/icons/back.svg
   SvgGenImage get back => const SvgGenImage('assets/icons/back.svg');
 
   /// File path: assets/icons/backup.svg
   SvgGenImage get backup => const SvgGenImage('assets/icons/backup.svg');
+
+  /// File path: assets/icons/battle.svg
+  SvgGenImage get battle => const SvgGenImage('assets/icons/battle.svg');
+
+  /// File path: assets/icons/brush.svg
+  SvgGenImage get brush => const SvgGenImage('assets/icons/brush.svg');
 
   /// File path: assets/icons/chat.svg
   SvgGenImage get chat => const SvgGenImage('assets/icons/chat.svg');
@@ -55,8 +65,11 @@ class $AssetsIconsGen {
 
   /// List of all assets
   List<SvgGenImage> get values => [
+        acakBattle,
         back,
         backup,
+        battle,
+        brush,
         chat,
         diamond,
         google,

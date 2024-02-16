@@ -1,4 +1,5 @@
 import 'package:bogopa_mobile/presentation/live/val/val_connection.dart';
+import 'package:bogopa_mobile/presentation/live/witget/jumlah_penonton.dart';
 import 'package:bogopa_mobile/presentation/live/witget/live_berakhir.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -12,6 +13,9 @@ import 'package:haishin_kit/rtmp_connection.dart';
 import 'package:haishin_kit/rtmp_stream.dart';
 import 'package:haishin_kit/video_source.dart';
 
+import 'alat_untuk_host.dart';
+import 'view_vs.dart';
+
 class LiveBerlangsung extends StatefulWidget {
   const LiveBerlangsung({super.key});
 
@@ -20,8 +24,10 @@ class LiveBerlangsung extends StatefulWidget {
 }
 
 class _LiveBerlangsungState extends State<LiveBerlangsung> {
+  // ignore: unused_field
   RtmpConnection? _connection;
   RtmpStream? _stream;
+  // ignore: unused_field
   bool _recording = false;
   CameraPosition currentPosition = CameraPosition.back;
 
@@ -63,6 +69,7 @@ class _LiveBerlangsungState extends State<LiveBerlangsung> {
         _stream = stream;
       });
     } catch (e) {
+      // ignore: avoid_print
       print(e);
     }
   }
@@ -101,7 +108,7 @@ class _LiveBerlangsungState extends State<LiveBerlangsung> {
                               child: CircleAvatar(
                                 radius: 27,
                                 backgroundImage: NetworkImage(
-                                    'https://i.pravatar.cc/100?img=1'),
+                                    'https://i.pravatar.cc/100?img=3'),
                               ),
                             ),
                             const SizedBox(width: 15),
@@ -141,20 +148,71 @@ class _LiveBerlangsungState extends State<LiveBerlangsung> {
                                   color: AppColors.coklat,
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(10))),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Center(
-                                  child: Text(
-                                    '1',
-                                    softWrap: false,
-                                    overflow: TextOverflow.fade,
-                                    style: GoogleFonts.poppins(
-                                        textStyle: const TextStyle(
-                                            fontSize: 13.0,
-                                            color: AppColors.putih,
-                                            fontWeight: FontWeight.normal)),
-                                  ),
+                              child: TextButton(
+                                child: Text(
+                                  '1',
+                                  softWrap: false,
+                                  overflow: TextOverflow.fade,
+                                  style: GoogleFonts.poppins(
+                                      textStyle: const TextStyle(
+                                          fontSize: 13.0,
+                                          color: AppColors.putih,
+                                          fontWeight: FontWeight.normal)),
                                 ),
+                                onPressed: () {
+                                  showModalBottomSheet<void>(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return Container(
+                                        height: 300,
+                                        width: double.infinity,
+                                        decoration: const BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.only(
+                                                topLeft: Radius.circular(30.0),
+                                                topRight:
+                                                    Radius.circular(30.0))),
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(15.0),
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: <Widget>[
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.center,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Text(
+                                                    'Penonton',
+                                                    softWrap: false,
+                                                    overflow: TextOverflow.fade,
+                                                    style: GoogleFonts.poppins(
+                                                        textStyle:
+                                                            const TextStyle(
+                                                                fontSize: 16.0,
+                                                                color: AppColors
+                                                                    .coklat,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold)),
+                                                  ),
+                                                ],
+                                              ),
+                                              const SizedBox(
+                                                height: 10,
+                                              ),
+                                              const JumlahPenonton(),
+                                            ],
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  );
+                                },
                               ),
                             ),
                             Text(
@@ -178,33 +236,100 @@ class _LiveBerlangsungState extends State<LiveBerlangsung> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         const FormJudulLive(),
+                        const SizedBox(
+                          width: 5,
+                        ),
                         Container(
-                          width: 45,
+                          width: 50,
                           height: 45,
                           decoration: BoxDecoration(
                             color: AppColors.coklat,
                             borderRadius: BorderRadius.circular(10.0),
                           ),
-                          child: Center(
+                          child: TextButton(
                             child: Text(
                               'VS',
                               softWrap: false,
                               overflow: TextOverflow.fade,
                               style: GoogleFonts.poppins(
                                   textStyle: const TextStyle(
-                                      fontSize: 20.0,
+                                      fontSize: 18.0,
                                       color: AppColors.putih,
                                       fontWeight: FontWeight.bold)),
                             ),
+                            onPressed: () {
+                              showModalBottomSheet<void>(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return Container(
+                                    height: 300,
+                                    width: double.infinity,
+                                    decoration: const BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(30.0),
+                                            topRight: Radius.circular(30.0))),
+                                    child: const Padding(
+                                        padding: EdgeInsets.all(15.0),
+                                        child: ViewVS()),
+                                  );
+                                },
+                              );
+                            },
                           ),
                         ),
-                        InkWell(
-                          onTap: () {},
-                          child: const Icon(
-                            Icons.menu,
-                            color: AppColors.putih,
-                            size: 40,
-                          ),
+                        IconButton(
+                          icon: const Icon(Icons.menu,
+                              color: AppColors.putih, size: 40),
+                          onPressed: () {
+                            showModalBottomSheet<void>(
+                              context: context,
+                              builder: (BuildContext context) {
+                                return Container(
+                                  height: 300,
+                                  width: double.infinity,
+                                  decoration: const BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                          topLeft: Radius.circular(30.0),
+                                          topRight: Radius.circular(30.0))),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(15.0),
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      mainAxisSize: MainAxisSize.min,
+                                      children: <Widget>[
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Alat untuk host',
+                                              softWrap: false,
+                                              overflow: TextOverflow.fade,
+                                              style: GoogleFonts.poppins(
+                                                  textStyle: const TextStyle(
+                                                      fontSize: 16.0,
+                                                      color: AppColors.coklat,
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
+                                        const AlatUntukHost(),
+                                      ],
+                                    ),
+                                  ),
+                                );
+                              },
+                            );
+                          },
                         ),
                         InkWell(
                           onTap: () {
@@ -252,15 +377,16 @@ class _FormJudulLiveState extends State<FormJudulLive> {
       child: SizedBox(
         width: MediaQuery.of(context).size.width / 2,
         child: TextFormField(
+            style: const TextStyle(color: Colors.white),
             decoration: InputDecoration(
-          border: OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.white),
-              borderRadius: BorderRadius.circular(10.0)),
-          isDense: true,
-          contentPadding: const EdgeInsets.all(12),
-          labelStyle: const TextStyle(fontSize: 15, color: AppColors.putih),
-          labelText: 'Katakan Sesuatu.....',
-        )),
+              border: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.white),
+                  borderRadius: BorderRadius.circular(10.0)),
+              isDense: true,
+              contentPadding: const EdgeInsets.all(12),
+              labelStyle: const TextStyle(fontSize: 15, color: AppColors.putih),
+              labelText: 'Katakan Sesuatu.....',
+            )),
       ),
     );
   }
