@@ -16,7 +16,7 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,10 +96,9 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 Column(
-                  
                   children: <Widget>[
                     Text(
                       '1',
@@ -154,33 +153,8 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                Column(
-                  
-                  children: <Widget>[
-                    Text(
-                      '1',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 32.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                    Text(
-                      'Penonton',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 15.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                  ],
-                ),
                 Column(
                   children: <Widget>[
                     Text(
@@ -189,7 +163,7 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
-                              fontSize: 32.0,
+                              fontSize: 48.0,
                               color: AppColors.coklat,
                               fontWeight: FontWeight.normal)),
                     ),
@@ -199,12 +173,36 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
-                              fontSize: 15.0,
+                              fontSize: 20.0,
                               color: AppColors.coklat,
                               fontWeight: FontWeight.normal)),
                     ),
                   ],
-                )
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(
+                      '1',
+                      softWrap: false,
+                      overflow: TextOverflow.fade,
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                              fontSize: 48.0,
+                              color: AppColors.coklat,
+                              fontWeight: FontWeight.normal)),
+                    ),
+                    Text(
+                      'Penonton',
+                      softWrap: false,
+                      overflow: TextOverflow.fade,
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                              fontSize: 20.0,
+                              color: AppColors.coklat,
+                              fontWeight: FontWeight.normal)),
+                    ),
+                  ],
+                ),
               ],
             )
           ],

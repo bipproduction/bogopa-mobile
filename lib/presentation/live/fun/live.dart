@@ -31,6 +31,7 @@ Future<void> initPlatformState(
     stream.attachVideo(VideoSource(position: currentPosition));
     conn!(connection);
   } else {
+    // ignore: avoid_print
     print("stream sedang berjalan");
   }
 }

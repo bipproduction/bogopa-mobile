@@ -1,7 +1,5 @@
 import 'dart:developer';
 
-import 'package:bogopa_mobile/presentation/live/witget/camera.dart';
-import 'package:bogopa_mobile/presentation/live/witget/stream.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -38,7 +36,7 @@ class _ViewLivePageState extends State<ViewLivePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Lama();
+    return const Lama();
   }
 }
 

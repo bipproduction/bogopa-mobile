@@ -15,21 +15,21 @@ class MyStream extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
           child: Padding(
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         child: Column(
           children: [
             TextButton(
                 onPressed: () {
-                  Get.to(MyCamera());
+                  Get.to(const MyCamera());
                 },
-                child: Text("ke camera live")),
+                child: const Text("ke camera live")),
             TextButton(
                 onPressed: () {
-                  Get.to(MyPlayer());
+                  Get.to(const MyPlayer());
                 },
-                child: Text("ke Player")
+                child: const Text("ke Player")
                 ),
-                TextButton(onPressed: () => Get.to(MyQPlayer()), child: Text("ke q player"))
+                TextButton(onPressed: () => Get.to(const MyQPlayer()), child: const Text("ke q player"))
           ],
         ),
       )),
