@@ -34,6 +34,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_card_swiper: ^6.1.0
+  flutter_chat_types: ^3.6.2
+  flutter_chat_ui: ^1.6.12
   flutter_launcher_icons: ^0.13.1
   flutter_lints: ^3.0.1
   flutter_svg: ^2.0.9
@@ -47,8 +49,8 @@ dependencies:
   simple_logger: ^1.9.0+3
   socket_io_client: ^2.0.3+1
   video_player: ^2.8.2
-  # web_socket_channel: ^2.4.4
   web_socket_channel: ^2.4.4
+  web_socket_client: ^0.1.0
   webviewx_plus: ^0.4.1
 
 dev_dependencies:

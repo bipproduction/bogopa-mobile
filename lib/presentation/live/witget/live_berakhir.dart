@@ -92,63 +92,6 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
                       fontWeight: FontWeight.normal)),
             ),
             const SizedBox(
-              height: 30,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Text(
-                      '1',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 48.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                    Text(
-                      'Jumlah LIVE',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 20.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: <Widget>[
-                    Text(
-                      '0',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 48.0,
-                              color: Colors.red,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                    Text(
-                      'Suka',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              fontSize: 20.0,
-                              color: AppColors.coklat,
-                              fontWeight: FontWeight.normal)),
-                    ),
-                  ],
-                )
-              ],
-            ),
-            const SizedBox(
               height: 50,
             ),
             Row(
@@ -158,22 +101,46 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
                 Column(
                   children: <Widget>[
                     Text(
+                      '1',
+                      softWrap: false,
+                      overflow: TextOverflow.fade,
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                              fontSize: 30.0,
+                              color: AppColors.coklat,
+                              fontWeight: FontWeight.normal)),
+                    ),
+                    Text(
+                      'Jumlah LIVE',
+                      softWrap: false,
+                      overflow: TextOverflow.fade,
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                              fontSize: 15.0,
+                              color: AppColors.coklat,
+                              fontWeight: FontWeight.normal)),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: <Widget>[
+                    Text(
                       '0',
                       softWrap: false,
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
-                              fontSize: 48.0,
-                              color: AppColors.coklat,
+                              fontSize: 30.0,
+                              color: Colors.red,
                               fontWeight: FontWeight.normal)),
                     ),
                     Text(
-                      'Pengikut Baru',
+                      'Suka',
                       softWrap: false,
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
-                              fontSize: 20.0,
+                              fontSize: 15.0,
                               color: AppColors.coklat,
                               fontWeight: FontWeight.normal)),
                     ),
@@ -187,7 +154,7 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
-                              fontSize: 48.0,
+                              fontSize: 30.0,
                               color: AppColors.coklat,
                               fontWeight: FontWeight.normal)),
                     ),
@@ -197,14 +164,14 @@ class _LiveBerakhirState extends State<LiveBerakhir> {
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
-                              fontSize: 20.0,
+                              fontSize: 15.0,
                               color: AppColors.coklat,
                               fontWeight: FontWeight.normal)),
                     ),
                   ],
-                ),
+                )
               ],
-            )
+            ),
           ],
         ),
       ),

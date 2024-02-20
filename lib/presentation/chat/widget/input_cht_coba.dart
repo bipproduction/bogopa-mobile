@@ -1,10 +1,16 @@
+import 'dart:convert';
 
-
+import 'package:web_socket_client/web_socket_client.dart';
 import 'package:bogopa_mobile/core/constants/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+final isi_chat = "".obs;
 
 class ReMessageInputWidget extends StatelessWidget {
-  const ReMessageInputWidget({super.key});
+  const ReMessageInputWidget({super.key, this.socket});
+  final WebSocket? socket;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,8 +37,12 @@ class ReMessageInputWidget extends StatelessWidget {
                         color: Color(0xFF231F20),
                       ),
                       onPressed: () {}),
-                  const Expanded(
+                  Expanded(
                     child: TextField(
+                      // controller: TextEditingController(text: isi_chat.value),
+                      onChanged: (value) {
+                        isi_chat.value = value;
+                      },
                       maxLines: 6,
                       decoration: InputDecoration(
                           hintText: "Type message ....",
@@ -61,6 +71,11 @@ class ReMessageInputWidget extends StatelessWidget {
                 color: AppColors.pinkMerah, shape: BoxShape.circle),
             child: InkWell(
               onTap: () {
+                
+                if (socket != null) {
+                  print(isi_chat.value);
+                  socket!.send(jsonEncode({"data": isi_chat.value}));
+                }
               },
               child: const Icon(
                 Icons.send,
