@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../core/constants/colors.dart';
+import '../widget/search_user.dart';
 import '../widget/test_chat/chat_page.dart';
 import '../widget/view_chat_item.dart';
 
@@ -28,22 +29,20 @@ class ViewChatPage extends StatelessWidget {
           backgroundColor: AppColors.putih,
           actions: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(right: 15.0),
+              padding: const EdgeInsets.only(right: 0),
               child: IconButton(
-                icon: const Badge(
-                    label: Text(
-                      'VIP',
-                      style: TextStyle(color: AppColors.coklat),
-                    ),
-                    backgroundColor: Colors.yellow,
-                    child: Icon(
-                      Icons.search,
-                      color: AppColors.coklat,
-                    )),
+                icon: const Icon(
+                  Icons.search,
+                  color: AppColors.coklat,
+                ),
                 onPressed: () {
-                  // Get.to(const ViewSearchUser(),
+                  Get.to(const ViewSearchUser(),
+                      transition: Transition.noTransition);
+                  // Get.to(
+                  //     const ChatPage(
+                  //       name: '',
+                  //     ),
                   //     transition: Transition.noTransition);
-                  Get.to(const ChatPage(), transition: Transition.noTransition);
                   // showDialog(
                   //     context: context,
                   //     builder: (context) => const CustomDialogSearch());
@@ -76,7 +75,7 @@ class ViewChatPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Text(
-                      'Rekomendasi',
+                      'Pasangan Baru',
                       softWrap: false,
                       overflow: TextOverflow.fade,
                       style: GoogleFonts.poppins(

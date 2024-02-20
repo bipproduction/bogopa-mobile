@@ -29,19 +29,6 @@ class BubbleLive extends StatelessWidget {
                       NetworkImage('https://i.pravatar.cc/100?img=$name'),
                 ),
               ),
-              const CircleAvatar(
-                radius: 12,
-                backgroundColor: AppColors.putih,
-                child: CircleAvatar(
-                  radius: 11,
-                  backgroundColor: AppColors.pinkMerah,
-                  child: Icon(
-                    Icons.live_tv,
-                    size: 15,
-                    color: Colors.white,
-                  ),
-                ),
-              )
             ],
           ),
           Padding(

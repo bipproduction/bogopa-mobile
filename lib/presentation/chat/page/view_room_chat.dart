@@ -8,7 +8,7 @@ import '../../../core/constants/colors.dart';
 import '../widget/input_cht_coba.dart';
 import 'view_info_profile_user.dart';
 
-enum Options { edit, hapus, putuskan }
+enum Options { hapus, putuskan }
 
 class ViewRoomChatPage extends StatelessWidget {
   const ViewRoomChatPage({super.key});
@@ -120,8 +120,6 @@ class _RoomChatPageState extends State<RoomChatPage> {
               },
               child: PopupMenuButton(
                 itemBuilder: (ctx) => [
-                  _buildPopupMenuItem(
-                      'Edit Alias', Icons.edit, Options.edit.index),
                   _buildPopupMenuItem('Hapus Riwayat Obrolan',
                       Icons.speaker_notes_off, Options.hapus.index),
                   _buildPopupMenuItem(
@@ -134,14 +132,12 @@ class _RoomChatPageState extends State<RoomChatPage> {
         padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              BodyChat(),
-              ReMessageInputWidget()
-            ]),
+            children: <Widget>[BodyChat()]),
       ),
     );
   }
 }
+
 class BodyChat extends StatelessWidget {
   const BodyChat({
     super.key,
@@ -284,4 +280,3 @@ PopupMenuItem _buildPopupMenuItem(
     ),
   );
 }
-

@@ -28,9 +28,11 @@ class ViewProfilePage extends StatelessWidget {
           actions: <Widget>[
             TextButton(
               onPressed: () {
-                Get.to(const ViewPengaturan(
-                  data: '',
-                ), transition: Transition.noTransition);
+                Get.to(
+                    const ViewPengaturan(
+                      data: '',
+                    ),
+                    transition: Transition.noTransition);
               },
               child: Assets.icons.setting.svg(
                   height: 24,
@@ -87,7 +89,8 @@ class _ProfilePageState extends State<ProfilePage> {
                   Container(
                     child: InkWell(
                       onTap: () {
-                        Get.to(const ViewInfoProfilePage(), transition: Transition.noTransition);
+                        Get.to(const ViewInfoProfilePage(),
+                            transition: Transition.noTransition);
                       },
                       child: const CircleAvatar(
                         radius: 64,
@@ -106,9 +109,11 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Container(
                         child: InkWell(
                           onTap: () {
-                            Get.to(const ViewEditInfoPage(
-                              data: '',
-                            ), transition: Transition.noTransition);
+                            Get.to(
+                                const ViewEditInfoPage(
+                                  data: '',
+                                ),
+                                transition: Transition.noTransition);
                           },
                           child: const CircleAvatar(
                             radius: 18,
@@ -148,15 +153,15 @@ class _ProfilePageState extends State<ProfilePage> {
                       ],
                     ),
                     SizedBox(height: 10),
-                    Text(
-                      'ID: 32382727329',
-                      softWrap: false,
-                      overflow: TextOverflow.fade,
-                      style: TextStyle(
-                          fontSize: 14.0,
-                          color: Colors.grey,
-                          fontWeight: FontWeight.normal),
-                    ),
+                    // Text(
+                    //   'ID: 32382727329',
+                    //   softWrap: false,
+                    //   overflow: TextOverflow.fade,
+                    //   style: TextStyle(
+                    //       fontSize: 14.0,
+                    //       color: Colors.grey,
+                    //       fontWeight: FontWeight.normal),
+                    // ),
                   ],
                 ),
               ),
@@ -262,9 +267,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
                                 onPressed: () {
-                                  Get.to(const ViewSukaSayaPage(
-                                    data: '',
-                                  ), transition: Transition.noTransition);
+                                  Get.to(
+                                      const ViewSukaSayaPage(
+                                        data: '',
+                                      ),
+                                      transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment:
@@ -352,9 +359,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
                                 onPressed: () {
-                                  Get.to(const ViewPengunjungSayaPage(
-                                    data: '',
-                                  ), transition: Transition.noTransition);
+                                  Get.to(
+                                      const ViewPengunjungSayaPage(
+                                        data: '',
+                                      ),
+                                      transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -421,9 +430,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
                                 onPressed: () {
-                                  Get.to(const ViewSayaSukaPage(
-                                    data: '',
-                                  ), transition: Transition.noTransition);
+                                  Get.to(
+                                      const ViewSayaSukaPage(
+                                        data: '',
+                                      ),
+                                      transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -497,9 +508,11 @@ class _ProfilePageState extends State<ProfilePage> {
                                     padding: MaterialStatePropertyAll(
                                         EdgeInsets.all(0))),
                                 onPressed: () {
-                                  Get.to(const ViewLanggananPage(
-                                    data: '',
-                                  ), transition: Transition.noTransition);
+                                  Get.to(
+                                      const ViewLanggananPage(
+                                        data: '',
+                                      ),
+                                      transition: Transition.noTransition);
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,

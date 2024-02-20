@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Websocket</title>
+    <!-- import jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0" charset="utf-8"></script>
+  </head>
+  <body>
+    <button id="test">Test</button>
+    <script>
+      const ws = new WebSocket(`wss://io.wibudev.com/`);
+      ws.onopen = function (event) {
+        console.log("open");
+      };
+
+      ws.onmessage = function (event) {
+        console.log(event.data);
+      };
+
+      document.getElementById("test").addEventListener("click", () => {
+        ws.send(
+          JSON.stringify({
+            data: {
+              type: "message",
+              isMe: false,
+              message: "apa kabar",
+            },
+          })
+        );
+
+        alert("success");
+      });
+    </script>
+  </body>
+</html>
