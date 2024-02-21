@@ -25,6 +25,15 @@ class _ChatPageState extends State<ChatPage> {
       backoff: const ConstantBackoff(Duration(seconds: 1)));
 
   List listMessage = <dynamic>[];
+  //  final List<Map<String, dynamic>>  listMessage = jsonDecode(utf8.decode(event));
+  //       for (Map<String, dynamic> map in listMessage) {
+  //         if (!map['isMe']) {
+  //           // jika pesan bukan dari user yang login maka dibalas dengan nama pengirimnya
+  //           map['text'] = '${map['nama']}: ${map['text']}';
+  //         } else {
+  //           map['isMe'] = true;
+  //         }
+  //       }
 
   @override
   void initState() {
@@ -138,42 +147,34 @@ class _ChatPageState extends State<ChatPage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Column(
-                children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        decoration: const BoxDecoration(
-                            color: AppColors.pinkMerah,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(5))),
+              Column(children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    // ignore: avoid_unnecessary_containers
+                    Container(
+                        // decoration: const BoxDecoration(
+                        //     color: AppColors.pinkMerah,
+                        //     borderRadius: BorderRadius.all(Radius.circular(5))),
                         child: Text(
-                          listMessage
-                              .map((e) => e.toString())
-                              .join('\n')
-                              .replaceAll('{', '')
-                              .replaceAll('}', '')
-                              .replaceAll('data:', ''),
-                          style: GoogleFonts.poppins(
-                              textStyle: const TextStyle(
-                                  fontSize: 16.0,
-                                  color: AppColors.putih,
-                                  fontWeight: FontWeight.normal)),
+                          listMessage.map((e) => e.toString()).join('\n'),
+                          style: const TextStyle(color: Colors.black),
+                        //       .map((e) => e.toString())
+                        //       .join('\n')
+                        //       .replaceAll('{', '')
+                        //       .replaceAll('}', '')
+                        //       .replaceAll('data:', ''),
+                        //   style: GoogleFonts.poppins(
+                        //       textStyle: const TextStyle(
+                        //           fontSize: 16.0,
+                        //           color: AppColors.putih,
+                        //           fontWeight: FontWeight.normal)),
+                        )),
+                  ],
+                )
+              ]),
 
-                          // .toString()
-                          // .replaceAll('[', '')
-                          // .replaceAll(']', '')
-                          // .replaceAll('{', '')
-                          // .replaceAll('}', '')
-                          // .replaceAll('data:', '')
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
               ReMessageInputWidget(
                 socket: socket,
               ),
@@ -222,4 +223,3 @@ PopupMenuItem _buildPopupMenuItem(
     ),
   );
 }
-

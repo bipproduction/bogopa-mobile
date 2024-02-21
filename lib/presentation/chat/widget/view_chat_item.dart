@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../page/view_info_profile_user.dart';
-import '../page/view_room_chat.dart';
 import 'test_chat/chat_page.dart';
 
 class SampleListView extends StatelessWidget {

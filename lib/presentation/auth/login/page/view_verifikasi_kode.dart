@@ -40,7 +40,7 @@ class VerifikasiKode extends StatelessWidget {
 }
 
 class FormVerifikasi extends StatefulWidget {
-  const FormVerifikasi({Key? key}) : super(key: key);
+  const FormVerifikasi({super.key});
 
   @override
   State<FormVerifikasi> createState() => _FormVerifikasiState();

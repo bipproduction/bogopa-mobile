@@ -11,7 +11,7 @@ import 'package:haishin_kit/rtmp_stream.dart';
 import 'package:haishin_kit/video_source.dart';
 
 class MyCamera extends StatefulWidget {
-  const MyCamera({Key? key}) : super(key: key);
+  const MyCamera({super.key});
 
   @override
   State<MyCamera> createState() => _MyCameraState();

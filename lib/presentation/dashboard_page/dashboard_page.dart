@@ -10,9 +10,9 @@ import '../profile/page/view_profile_page.dart';
 class DashboardPage extends StatefulWidget {
   final int currentTab;
   const DashboardPage({
-    Key? key,
+    super.key,
     required this.currentTab,
-  }) : super(key: key);
+  });
 
   @override
   State<DashboardPage> createState() => _DashboardPageState();

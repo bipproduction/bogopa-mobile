@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../core/constants/colors.dart';
 import '../widget/search_user.dart';
-import '../widget/test_chat/chat_page.dart';
 import '../widget/view_chat_item.dart';
 
 class ViewChatPage extends StatelessWidget {
