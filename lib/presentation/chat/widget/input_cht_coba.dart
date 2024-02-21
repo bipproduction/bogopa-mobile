@@ -5,6 +5,7 @@ import 'package:bogopa_mobile/core/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: non_constant_identifier_names
 final isi_chat = "".obs;
 
 class ReMessageInputWidget extends StatelessWidget {
@@ -44,7 +45,7 @@ class ReMessageInputWidget extends StatelessWidget {
                         isi_chat.value = value;
                       },
                       maxLines: 6,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: "Type message ....",
                           hintStyle: TextStyle(color: Color(0xFF231F20)),
                           border: InputBorder.none),
@@ -73,6 +74,7 @@ class ReMessageInputWidget extends StatelessWidget {
               onTap: () {
                 
                 if (socket != null) {
+                  // ignore: avoid_print
                   print(isi_chat.value);
                   socket!.send(jsonEncode({"data": isi_chat.value}));
                 }

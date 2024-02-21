@@ -48,21 +48,14 @@ class CustomDialogData extends StatelessWidget {
       child: Stack(
         children: [
           const CardDialog(),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Positioned(
-                  child: (InkWell(
-                onTap: () {
+          Container(
+            height: 436,
+            alignment: Alignment.topRight,
+            child: IconButton(
+                onPressed: () {
                   Navigator.of(context).pop();
                 },
-                child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Icon(Icons.close),
-                ),
-              )))
-            ],
+                icon: const Icon(Icons.close)),
           )
         ],
       ),

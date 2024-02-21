@@ -3,10 +3,10 @@ import 'package:flutter/material.dart';
 
 class BubbleLive extends StatelessWidget {
   const BubbleLive({
-    Key? key,
+    super.key,
     required this.name,
     required this.isMe,
-  }) : super(key: key);
+  });
 
   final String name;
   final bool isMe;
