@@ -82,18 +82,24 @@ class Lama extends StatelessWidget {
                 ),
               ],
             ),
-            bottom: const TabBar(
+            bottom:  TabBar(
               indicatorColor: AppColors.pinkMerah,
               labelColor: AppColors.pinkMerah,
               unselectedLabelColor: AppColors.coklat,
               dividerColor: Colors.transparent,
               tabs: [
-                Tab(text: 'Rekomendasi'),
-                Tab(text: 'Sekitar'),
+                // ignore: avoid_unnecessary_containers
+                Container(
+                  child: const Text("Rekomendasi"),
+                ),
+                // ignore: avoid_unnecessary_containers
+                Container(
+                  child: const Text("Sekitar"),
+                ),
               ],
             ),
           ),
-          body: const TabBarView(children: [
+          body:  const TabBarView(children: [
             RekomendasiPage(),
             SekitarPage(),
           ]),

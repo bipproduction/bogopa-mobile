@@ -57,8 +57,7 @@ class _SayaSukaPageState extends State<SayaSukaPage> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 10),
-      child: Expanded(
-          child: Column(
+      child: Column(
         children: <Widget>[
           Text(
             "Tingkatkan Suka agar orang lain dapat,",
@@ -609,7 +608,7 @@ class _SayaSukaPageState extends State<SayaSukaPage> {
             ),
           )
         ],
-      )),
+      ),
     );
   }
 }
